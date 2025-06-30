@@ -90,7 +90,7 @@ export default function Layout({ children }) {
               className="flex items-center space-x-3 space-x-reverse"
             >
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.jpg"
+                src="/assets/images/shirProflie.jpg"
                 alt="שיר עזריה - SHIRSHIZ"
                 className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
               />
