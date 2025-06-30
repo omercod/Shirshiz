@@ -140,6 +140,15 @@ export default function GarlicChallahRecipe() {
       <style>
         {`
           @media print {
+              @page {
+              size: A4;
+              margin: 1cm;
+            }
+            html, body {
+              width: 100%;
+              max-width: 900px;
+              margin: 0 auto;
+            }
             .no-print {
               display: none !important;
             }
@@ -264,6 +273,7 @@ export default function GarlicChallahRecipe() {
               margin-bottom: 20px;
               border-bottom: 3px solid #f2b1ad;
               padding-bottom: 8px;
+              margin-top: 50px;
               color: #333;
               display: flex;
               align-items: center;
@@ -272,7 +282,7 @@ export default function GarlicChallahRecipe() {
               font-size: 22pt;
               font-weight: bold;
               margin-bottom: 20px;
-              margin-top: 120px;
+              margin-top: 170px;
               border-bottom: 3px solid #f2b1ad;
               padding-bottom: 8px;
               color: #333;
