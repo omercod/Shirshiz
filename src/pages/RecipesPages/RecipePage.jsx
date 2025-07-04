@@ -18,6 +18,7 @@ import {
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ShareButtons from "../../components/ShareButtons";
 import { recipes } from "../../data/recipesData";
+import { Helmet } from "react-helmet";
 
 export default function RecipePage() {
   const { slug } = useParams();
@@ -304,6 +305,21 @@ export default function RecipePage() {
           }
         `}
       </style>
+
+      <Helmet>
+        <title>{`${recipe.title} - מתכון של SHIRSHIZ`}</title>
+        <meta
+          property="og:title"
+          content={`${recipe.title} - מתכון של SHIRSHIZ`}
+        />
+        <meta property="og:description" content={recipe.descriptionShort} />
+        <meta
+          property="og:image"
+          content={`${window.location.origin}${recipe.image}`}
+        />
+        <meta property="og:url" content={window.location.href} />
+        <meta property="og:type" content="article" />
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative w-full flex items-center justify-center py-12 sm:py-20 lg:py-24 overflow-hidden no-print">
