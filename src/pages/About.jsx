@@ -8,17 +8,17 @@ export default function About() {
     {
       icon: Award,
       title: "+6 שנות ניסיון",
-      description: "בתחום הקונדיטוריה והעיצוב",
+      description: "בתחום עיצוב העוגות",
     },
     {
       icon: Users,
-      title: "+30 בוגרות",
-      description: "שהשתתפו בקורסים שלי",
+      title: "+300 לקוחות מרוצים",
+      description: "שהצלחתי לשמח ולרגש",
     },
     {
       icon: Heart,
       title: "תשוקה אמיתית",
-      description: "לחלוק ידע ולהעביר מקצועיות",
+      description: "לעצב עוגות ולחלוק ידע ומקצועיות",
     },
     {
       icon: Clock,
@@ -30,28 +30,12 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Decorative Header Background */}
-      <div className="pt-16 bg-gradient-to-br from-brand-pink-100 via-beige-100 to-white relative overflow-hidden">
+      <div className="bg-gradient-to-br from-brand-pink-100 via-beige-100 to-white relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-80 h-80 bg-brand-pink-200 rounded-full opacity-20 -translate-y-40 -translate-x-40"></div>
         <div className="absolute top-10 right-20 w-24 h-24 bg-beige-300 rounded-full opacity-40"></div>
         <div className="absolute bottom-0 left-1/3 w-56 h-56 bg-brand-pink-200 rounded-full opacity-15 translate-y-28"></div>
         <div className="absolute top-1/2 right-0 w-40 h-40 bg-beige-200 rounded-full opacity-25 translate-x-20"></div>
-
-        <div className="relative">
-          <AnimateOnScroll
-            animation="fade-in"
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-          >
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                שיר עזריה
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                מעצבת עוגות ומתוקים בעבודת יד
-              </p>
-            </div>
-          </AnimateOnScroll>
-        </div>
       </div>
 
       {/* Main Content */}
@@ -64,29 +48,34 @@ export default function About() {
                 נעים להכיר!
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <p>אני שיר, בת 27, מעצבת עוגות ומתוקים בעבודת יד.</p>
+                <p>
+                  אני שיר, מעצבת עוגות ומתוקים בהתאמה אישית ומנחת קורסים לעיצוב
+                  עוגות.
+                </p>
 
                 <p>
                   כבר מגיל צעיר התאהבתי בעולם האפייה – השילוב בין יצירתיות, דיוק
-                  וטעמים תמיד ריתק אותי. לפני חמש שנים החלטתי להפוך את התשוקה
-                  הזו למקצוע, ומאז אני יוצרת עוגות בעיצוב אישי לכל אירוע.
+                  וטעמים תמיד ריתק אותי. לפני שש שנים החלטתי להפוך את התשוקה הזו
+                  למקצוע, ומאז אני יוצרת עוגות בעיצוב אישי לכל אירוע.
                 </p>
 
                 <p>
-                  אני מקפידה על שימוש בחומרי גלם איכותיים ומקדישה מחשבה לכל פרט,
-                  כדי להבטיח שהעוגות לא יהיו רק יפות – אלא גם טעימות במיוחד!
+                  הכי חשוב לי שהעוגה תהיה בדיוק כמו שדמיינתם, ואפילו מעבר
+                  לציפיות!
                 </p>
 
                 <p>
-                  הכי חשוב לי שהעוגה תהיה בדיוק כמו שדמיינתם – לשמח, לרגש
-                  ולהתאים בדיוק לטעם שלכם. אין דבר שמשמח אותי יותר מאשר לראות את
-                  הלקוחות מתלהבים מהתוצאה, נהנים מכל ביס, וכבר מחכים להזמנה
-                  הבאה!
+                  בנוסף, אני מזמינה אתכן לקחת את התשוקה שלכן לעולם עיצוב העוגות
+                  צעד אחד קדימה, ולתת לי לעזור לכן להגשים את החלום! בין אם אתן
+                  רק בתחילת הדרך ורוצות לטעום מהעולם הזה, ובין אם אתן חולמות
+                  להפוך את זה למקצוע – בסדנאות שלי תלמדו לעצב עוגות בשיטות
+                  מקצועיות, לרכוש ביטחון, ולהוציא מהידיים שלכן עוגות מהממות
+                  וטעימים.
                 </p>
 
                 <p>
-                  אני מזמינה אתכם להפוך כל רגע מיוחד לחוויה בלתי נשכחת עם עוגות
-                  שמעוצבות בדיוק בשבילכם!
+                  אני כאן כדי לתת לכן כלים, ללוות אתכן, ולעזור לכן ליצור - גם
+                  לעצמכן וגם לאחרים!
                 </p>
               </div>
             </AnimateOnScroll>
@@ -95,7 +84,7 @@ export default function About() {
             <AnimateOnScroll animation="zoom-in">
               <div className="relative">
                 <img
-                  src="/assets/images/shirProflie.jpg"
+                  src="/assets/images/home/shirProflie.jpg"
                   alt="שיר עזריה - קונדיטורית מקצועית עם עוגות"
                   className="rounded-2xl shadow-2xl w-full"
                 />
@@ -118,22 +107,28 @@ export default function About() {
                     <div className="w-16 h-16 bg-gradient-to-br from-brand-pink-100 to-beige-200 rounded-full flex items-center justify-center mx-auto mb-4">
                       <achievement.icon className="w-8 h-8 text-brand-pink-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center justify-center">
-                      {achievement.title.includes("+") ? (
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center justify-center gap-1">
+                      {achievement.title.match(/\d+/) ? (
                         <>
-                          <CountUp
-                            start={0}
-                            end={parseInt(achievement.title.match(/\d+/)[0])}
-                            duration={2}
-                            enableScrollSpy
-                            scrollSpyOnce
-                          />
+                          <span>
+                            +
+                            <CountUp
+                              start={0}
+                              end={parseInt(achievement.title.match(/\d+/)[0])}
+                              duration={2}
+                              enableScrollSpy
+                              scrollSpyOnce
+                            />
+                          </span>
                           <span className="ml-1">
-                            {achievement.title.replace(/\d+/g, "")}
+                            {achievement.title
+                              .replace("+", "")
+                              .replace(/\d+/g, "")
+                              .trim()}
                           </span>
                         </>
                       ) : (
-                        achievement.title
+                        <span>{achievement.title}</span>
                       )}
                     </h3>
 
@@ -144,23 +139,23 @@ export default function About() {
             ))}
           </div>
 
-          {/* Philosophy Section */}
+          {/* Moto Section */}
           <AnimateOnScroll
             animation="fade-in"
-            className="bg-gradient-to-l from-brand-pink-100 to-beige-100 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-l from-brand-pink-100 to-beige-100 rounded-3xl p-2 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              הפילוסופיה שלי
+              המוטו שלי
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                אני מאמינה שקונדיטוריה היא לא רק בישול - זו אמנות שמחברת בין
-                טכניקה ליצירתיות. כל עוגה שאני יוצרת היא הזדמנות ליצור שמחה,
-                לחגוג רגעים מיוחדים ולהביא חיוך לפנים של אנשים.
+                אני מאמינה שקונדיטוריה היא הרבה יותר מלהכין עוגות וקינוחים - זו
+                אמנות שמשלבת בין מיומנות ליצירתיות. כל עוגה שאני יוצרת היא
+                הזדמנות לשמח, לרגש ולחגוג רגעים חשובים שראויים למזכרת.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                המטרה שלי היא לא רק ללמד אתכן טכניקות, אלא להעניק לכן ביטחון
-                עצמי, יצירתיות והכלים להמשיך וליצור בעצמכן.
+                המטרה שלי היא לא רק ללמד טכניקות, אלא להעניק לכן ביטחון, לעורר
+                את היצירתיות שבכן ולספק עבורכן את הכלים להמשיך ליצור בעצמכן.
               </p>
             </div>
           </AnimateOnScroll>

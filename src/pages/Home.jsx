@@ -25,28 +25,28 @@ export default function Home() {
       details: "באר שבע",
       text: "הייתי בקורס של שיר המהממת, בהתחלה כזה היה יותר קשה ולא היה לי ביטחון אבל עכשיו אני עם ביטחון עצום וזה כזה מזה כיף ויותר קל עכשיו, באמת שכדאי לכם, ממליצה מאוד!",
       rating: 5,
-      image: "/assets/images/tamar_review.jpg",
+      image: "/assets/images/home/tamar_review.jpg",
     },
     {
       name: "דאנה ארובס",
       details: "תדהר",
       text: "היה קורס מושלם!!!!!! והעוגה יצאה כל כך יפה וטעימה ובאה בול בשביל להרשים את כל המשפחה אחרי ארוחת שישי 🥰🥰🥰🥰🥰",
       rating: 5,
-      image: "/assets/images/dana_review.jpg",
+      image: "/assets/images/home/dana_review.jpg",
     },
     {
       name: "שנהב אופיר",
       details: "חיפה",
       text: "רוצה להמליץ מהלב על העוגות של שיר ! חברות שלי סגרו דרכה עוגה למסיבת רווקות ,מעבר לזה שהעוגה הייתה מהממת היא הייתה טעימה בטירוף ! בנוסף המחיר היה הוגן מאוד . ",
       rating: 5,
-      image: "/assets/images/engage_shenhav.jpg",
+      image: "/assets/images/home/engage_shenhav.jpg",
     },
     {
       name: "ענבל עמר",
       details: "חרב להת",
       text: " קיבלתי עוגה מדהימה משיר המוכשרת לכבוד יום ההולדת שלי, ואין לי מילים לתאר עד כמה היא הייתה מיוחדת, טעימה ומעוצבת בדיוק בצבע האהוב עליי!",
       rating: 5,
-      image: "/assets/images/Inabl_box.jpg",
+      image: "/assets/images/home/Inabl_box.jpg",
     },
   ];
 
@@ -89,7 +89,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/assets/images/cupCakes_valen.JPG"
+            src="/assets/images/home/cupCakes_valen.JPG"
             alt="רקע עוגות מעוצבות"
             className="w-full h-full object-cover"
           />
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="bg-white/95 backdrop-blur-sm rounded-3xl px-8 py-8 md:px-12 md:py-12 shadow-2xl">
               <div className="flex justify-center mb-2">
                 <img
-                  src="/assets/images/shirshizLogo.jpg"
+                  src="/assets/images/home/shirshizLogo.jpg"
                   alt="SHIRSHIZ Logo"
                   className="h-28 md:h-36 lg:h-44"
                 />
@@ -148,19 +148,19 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <AnimateOnScroll animation="slide-up">
+            <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 היי, נעים להכיר!
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                אני שיר, עם 6 שנים של נסיון כמעצבת עוגות ומתוקים בעבודת יד, עם
-                אהבה ענקית לעיצוב, יצירתיות ורצון להפוך כל עוגה לרגע בלתי נשכח!
-                אצלי תוכלו להזמין עוגות מעוצבות ומרשימות שמתאימות בדיוק לאירוע
-                שלכם – כי כל רגע מיוחד שווה חוויה מתוקה ובלתי נשכחת.
+                אני שיר, מעצבת עוגות ומתוקים בהתאמה אישית, עם 6 שנים של ניסיון
+                בתחום, אהבה ענקית לעיצוב, יצירתיות ורצון להפוך כל עוגה לרגע בלתי
+                נשכח! אצלי תוכלו להזמין עוגות מעוצבות ומרשימות שמתאימות בדיוק
+                לאירוע שלכם - כי כל רגע מיוחד שווה חוויה מתוקה ובלתי נשכחת.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 בנוסף, אני מזמינה אתכן לקורס עיצוב עוגות מקצועי וחווייתי, שבו
-                תלמדו לעצב עוגה בעצמך – גם אם אין לכן ניסיון קודם. תצאו עם עוגה
+                תלמדו לעצב עוגה בעצמכן – גם אם אין לכן ניסיון קודם. תצאו עם עוגה
                 מהממת, כלים פרקטיים, ביטחון, והרבה השראה להמשיך ליצור גם בבית.
               </p>
               <Link to={createPageUrl("About")}>
@@ -169,16 +169,16 @@ export default function Home() {
                   <ArrowLeft className="w-4 h-4 mr-2" />
                 </Button>
               </Link>
-            </AnimateOnScroll>
+            </div>
 
-            <AnimateOnScroll animation="zoom-in" className="relative">
+            <div className="relative">
               <img
-                src="/assets/images/shirProflie.jpg"
+                src="/assets/images/home/shirProflie.jpg"
                 alt="שיר עזריה - קונדיטורית מקצועית עם עוגות"
                 className="rounded-2xl shadow-2xl w-full"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-brand-pink-200 to-beige-300 rounded-full opacity-80"></div>
-            </AnimateOnScroll>
+            </div>
           </div>
         </div>
       </section>
@@ -272,20 +272,18 @@ export default function Home() {
                 className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/workShopVideo.mp4");
-                  setSelectedVideoAlt("סרטון הכנת עוגה");
+                  setSelectedVideoAlt("קורס זוגי");
                 }}
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/workShopVideo.mp4");
-                  setSelectedVideoAlt("סרטון הכנת עוגה");
+                  setSelectedVideoAlt("קורס זוגי");
                 }}
               >
                 <Video className="w-16 h-16 text-white mb-2" />
-                <p className="text-sm font-medium text-white">
-                  סרטון הכנת עוגה
-                </p>
+                <p className="text-sm font-medium text-white">קורס זוגי </p>
               </div>
             </AnimateOnScroll>
 
@@ -295,14 +293,14 @@ export default function Home() {
               className="relative h-full rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/blueButterfly.jpg"
+                src="/assets/images/home/blueButterfly.jpg"
                 alt="עוגת פרפרים"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/blueButterfly.jpg");
+                  setSelectedImage("/assets/images/home/blueButterfly.jpg");
                   setSelectedImageAlt("עוגת פרפרים");
                 }}
               >
@@ -317,19 +315,19 @@ export default function Home() {
               className="relative h-full rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/engade_lin.jpg"
-                alt="הכנת קרם"
+                src="/assets/images/home/engade_lin.jpg"
+                alt="עוגת אירוסין"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/engade_lin.jpg");
-                  setSelectedImageAlt("הכנת קרם");
+                  setSelectedImage("/assets/images/home/engade_lin.jpg");
+                  setSelectedImageAlt("עוגת אירוסין");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">הכנת קרם</p>
+                <p className="text-sm font-medium text-white">עוגת אירוסין</p>
               </div>
             </AnimateOnScroll>
 
@@ -340,19 +338,19 @@ export default function Home() {
               className="relative aspect-square rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/miniMouse.jpg"
-                alt="פרחי בצק סוכר"
+                src="/assets/images/home/miniMouse.jpg"
+                alt="עוגת מיני מאוס"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/miniMouse.jpg");
-                  setSelectedImageAlt("פרחי בצק סוכר");
+                  setSelectedImage("/assets/images/home/miniMouse.jpg");
+                  setSelectedImageAlt("עוגת מיני מאוס");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">פרחי בצק סוכר</p>
+                <p className="text-sm font-medium text-white">עוגת מיני מאוס</p>
               </div>
             </AnimateOnScroll>
 
@@ -370,18 +368,20 @@ export default function Home() {
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/boyORgirl.mp4");
-                  setSelectedVideoAlt("סרטון אפייה");
+                  setSelectedVideoAlt("עוגה לגילוי מין העובר");
                 }}
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/boyORgirl.mp4");
-                  setSelectedVideoAlt("סרטון אפייה");
+                  setSelectedVideoAlt("עוגה לגילוי מין העובר");
                 }}
               >
                 <Video className="w-12 h-12 text-white mb-2" />
-                <p className="text-sm font-medium text-white">סרטון אפייה</p>
+                <p className="text-sm font-medium text-white">
+                  עוגה לגילוי מין העובר
+                </p>
               </div>
             </AnimateOnScroll>
 
@@ -391,19 +391,19 @@ export default function Home() {
               className="relative aspect-square rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/HeartCake.jpg"
-                alt="קרמים וטופינגס"
+                src="/assets/images/home/HeartCake.jpg"
+                alt="עוגת בת מצווה"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/HeartCake.jpg");
-                  setSelectedImageAlt("קרמים וטופינגס");
+                  setSelectedImage("/assets/images/home/HeartCake.jpg");
+                  setSelectedImageAlt("עוגת בת מצווה");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">קרמים וטופינגס</p>
+                <p className="text-sm font-medium text-white">עוגת בת מצווה</p>
               </div>
             </AnimateOnScroll>
 
@@ -421,20 +421,18 @@ export default function Home() {
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/shotsCake.mp4");
-                  setSelectedVideoAlt("סרטון עוגת חתונה");
+                  setSelectedVideoAlt("עוגת צייסרים");
                 }}
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/shotsCake.mp4");
-                  setSelectedVideoAlt("סרטון עוגת חתונה");
+                  setSelectedVideoAlt("עוגת צייסרים");
                 }}
               >
                 <Video className="w-12 h-12 text-white mb-2" />
-                <p className="text-sm font-medium text-white">
-                  סרטון עוגת חתונה
-                </p>
+                <p className="text-sm font-medium text-white">עוגת צייסרים</p>
               </div>
             </AnimateOnScroll>
 
@@ -445,19 +443,19 @@ export default function Home() {
               className="relative aspect-square rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/Bar_miitzva.jpg"
-                alt="מרנג וקצפת"
+                src="/assets/images/home/Bar_miitzva.jpg"
+                alt="עוגת בר מצווה"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/Bar_miitzva.jpg");
-                  setSelectedImageAlt("מרנג וקצפת");
+                  setSelectedImage("/assets/images/home/Bar_miitzva.jpg");
+                  setSelectedImageAlt("עוגת בר מצווה");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">מרנג וקצפת</p>
+                <p className="text-sm font-medium text-white">עוגת בר מצווה</p>
               </div>
             </AnimateOnScroll>
 
@@ -467,19 +465,19 @@ export default function Home() {
               className="relative aspect-square rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/spiderMan_cake.jpg"
-                alt="עוגיות מעוצבות"
+                src="/assets/images/home/spiderMan_cake.jpg"
+                alt="עוגת ספיידרמן"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/spiderMan_cake.jpg");
-                  setSelectedImageAlt("עוגיות מעוצבות");
+                  setSelectedImage("/assets/images/home/spiderMan_cake.jpg");
+                  setSelectedImageAlt("עוגת ספיידרמן");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">עוגיות מעוצבות</p>
+                <p className="text-sm font-medium text-white">עוגת ספיידרמן</p>
               </div>
             </AnimateOnScroll>
 
@@ -497,18 +495,20 @@ export default function Home() {
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/justinVideo.mp4");
-                  setSelectedVideoAlt("קאפקייקס");
+                  setSelectedVideoAlt("עוגת ג'סטין ביבר");
                 }}
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/justinVideo.mp4");
-                  setSelectedVideoAlt("קאפקייקס");
+                  setSelectedVideoAlt("עוגת ג'סטין ביבר");
                 }}
               >
                 <Video className="w-10 h-10 text-white mb-2" />
-                <p className="text-sm font-medium text-white">קאפקייקס</p>
+                <p className="text-sm font-medium text-white">
+                  עוגת גסטין ביבר
+                </p>
               </div>
             </AnimateOnScroll>
 
@@ -518,20 +518,20 @@ export default function Home() {
               className="relative aspect-square rounded-xl shadow-md overflow-hidden group hover-lift"
             >
               <img
-                src="/assets/images/yuval_bearCake.jpg"
-                alt="עוגות ללא גלוטן"
+                src="/assets/images/home/yuval_bearCake.jpg"
+                alt="עוגת דובי וינטאג'"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
-                  setSelectedImage("/assets/images/yuval_bearCake.jpg");
-                  setSelectedImageAlt("עוגות ללא גלוטן");
+                  setSelectedImage("/assets/images/home/yuval_bearCake.jpg");
+                  setSelectedImageAlt("עוגת דובי וינטאג'");
                 }}
               >
                 <ZoomInIcon className="w-10 h-10 text-white mb-2" />
                 <p className="text-sm font-medium text-white">
-                  עוגות ללא גלוטן
+                  עוגת דובי וינטאג
                 </p>
               </div>
             </AnimateOnScroll>
@@ -648,7 +648,7 @@ export default function Home() {
             src={selectedVideo}
             controls
             autoPlay
-            className="max-w-3xl w-full max-h-[80vh] rounded-xl shadow-xl"
+            className="max-w-3xl w-full max-h-[70vh] rounded-xl shadow-xl"
           />
         </div>
       )}
@@ -672,7 +672,7 @@ export default function Home() {
                 </div>
                 <div className="hidden md:block">
                   <img
-                    src="/assets/images/cupCakes.jpg"
+                    src="/assets/images/home/cupCakes.jpg"
                     alt="יצירת קשר - עוגות מעוצבות"
                     className="w-full h-full object-cover"
                   />
