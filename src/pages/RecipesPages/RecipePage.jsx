@@ -44,12 +44,17 @@ export default function RecipePage() {
               margin: 1cm;
             }
             html, body {
-            width: 21cm;
-            max-width: 21cm;
-            margin: 0 auto;
-            box-sizing: border-box;
-            overflow-wrap: break-word;
-            word-break: break-word;
+                width: 21cm;
+                max-width: 21cm;
+                height: auto;
+                min-height: 29.7cm;
+                margin: 0 auto;
+                box-sizing: border-box;
+                font-size: 12pt;
+                line-height: 1.4;
+                color: black;
+                overflow-wrap: break-word;
+                word-break: break-word;
             }
             .no-print {
               display: none !important;
