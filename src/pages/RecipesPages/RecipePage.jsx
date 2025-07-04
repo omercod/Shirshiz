@@ -39,6 +39,31 @@ export default function RecipePage() {
     <div className="min-h-screen">
       <style>
         {`
+        @media print and (orientation: portrait) {
+        @page {
+            size: 8.27in 11.69in; /* A4 באינצ'ים, מתאים יותר ל-iOS */
+            margin: 1cm;
+        }
+        html, body {
+            width: 100%;
+            max-width: 21cm;
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-size: 12pt;
+            line-height: 1.4;
+            overflow-wrap: break-word;
+            word-break: break-word;
+        }
+        .recipe-content, .ingredients-section, .instructions-section,
+        .instruction-item, .ingredient-item {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        .print-header, .print-footer {
+            position: relative; /* לא fixed ב-iOS כדי שלא ייחתך */
+            page-break-inside: avoid;
+        }
+        }
           @media print {
               @page {
               size: A4;
@@ -47,13 +72,11 @@ export default function RecipePage() {
             html, body {
                 width: 21cm;
                 max-width: 21cm;
-                height: auto;
                 min-height: 29.7cm;
                 margin: 0 auto;
                 box-sizing: border-box;
                 font-size: 12pt;
                 line-height: 1.4;
-                color: black;
                 overflow-wrap: break-word;
                 word-break: break-word;
             }
