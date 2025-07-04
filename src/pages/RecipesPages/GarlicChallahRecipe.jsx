@@ -332,12 +332,12 @@ export default function GarlicChallahRecipe() {
       </style>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden no-print">
+      <section className="relative w-full flex items-center justify-center py-12 sm:py-20 lg:py-24 overflow-hidden no-print">
         <div className="absolute inset-0">
           <img
             src={recipe.image}
             alt={recipe.title}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full min-h-[400px] object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
