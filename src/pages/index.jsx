@@ -13,8 +13,6 @@ import Gallery from "./Gallery";
 import Contact from "./Contact";
 
 import CakeDesignWorkshop from "./WorkShopPages/CakeDesignWorkshop.jsx";
-
-import GarlicChallahRecipe from "./RecipesPages/GarlicChallahRecipe.jsx";
 import RecipePage from "./RecipesPages/RecipePage.jsx";
 
 import {
@@ -38,8 +36,6 @@ const PAGES = {
   Contact: Contact,
 
   CakeDesignWorkshop: CakeDesignWorkshop,
-
-  GarlicChallahRecipe: GarlicChallahRecipe,
 };
 
 function _getCurrentPage(url) {
@@ -81,8 +77,6 @@ function PagesContent() {
         <Route path="/Contact" element={<Contact />} />
 
         <Route path="/CakeDesignWorkshop" element={<CakeDesignWorkshop />} />
-
-        <Route path="/GarlicChallahRecipe" element={<GarlicChallahRecipe />} />
       </Routes>
     </Layout>
   );
