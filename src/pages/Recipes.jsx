@@ -13,7 +13,7 @@ export default function Recipes() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("הכל");
 
-  const categories = ["הכל", "עוגות", "עוגיות", "קינוחים", "מאפים", "מאכלים"];
+  const categories = ["הכל", "עוגות", "עוגיות", "קינוחים", "מאפים", "מיוחדים"];
 
   const getTagColor = (tag) => {
     switch (tag) {

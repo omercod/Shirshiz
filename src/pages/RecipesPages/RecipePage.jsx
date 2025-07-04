@@ -382,8 +382,8 @@ export default function RecipePage() {
                       <div className="flex flex-wrap justify-center gap-6 mb-6">
                         <ShareButtons
                           url={window.location.href}
-                          title={`${recipe.title} - מתכון`}
-                          media={recipe.image}
+                          title={`${recipe.title} - מתכון של SHIRSHIZ`}
+                          media={`${window.location.origin}${recipe.image}`}
                         />
                       </div>
                       <div className="flex justify-center">
@@ -638,8 +638,8 @@ export default function RecipePage() {
           </h2>
           <ShareButtons
             url={window.location.href}
-            title={`${recipe.title} - מתכון מדהים`}
-            media={recipe.image}
+            title={`${recipe.title} - מתכון של SHIRSHIZ`}
+            media={`${window.location.origin}${recipe.image}`}
           />
         </div>
       </section>
