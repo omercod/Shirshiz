@@ -7,7 +7,6 @@ import {
   Facebook,
   Instagram,
   Share2,
-  Play,
   Clock,
   Users,
   ChefHat,
@@ -18,53 +17,11 @@ import {
 } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ShareButtons from "../../components/ShareButtons";
+import { recipes } from "../../data/recipesData";
 
 export default function GarlicChallahRecipe() {
   const [showShareMenu, setShowShareMenu] = useState(false);
-
-  const recipe = {
-    title: "חלת שום ופסטו עננים",
-    image: "./assets/images/recipes/garlic.jpg",
-    descriptionShort: "חלה רכה ועשירה בטעמי שום ופסטו ",
-    descriptionLong: [
-      "חלת שום-פסטו רכה כמו ענן. מסוג החלות שנעלמות מהשולחן עוד לפני שהספקת להשים בצלחת.",
-      "מסוג החלות שנעלמות מהשולחן עוד לפני שהספקת להשים בצלחת.מושלמת ליד ארוחת ערב משפחתית (אצלי היא חובה ליד הדגים של שישי), משתלבת נהדר עם מטבלים – או פשוט ככה, חמה וטרייה מהתנור.",
-    ],
-    prepTime: "15 דקות",
-    cookTime: "20 דקות",
-    servings: "12 לחמניות",
-    videoDuration: "01:10",
-    ingredients: [
-      {
-        category: "לבצק",
-        items: [
-          '½ ק"ג קמח לבן',
-          "1 כף שמרים",
-          "1 כף סוכר",
-          "1 כף שטוחה מלח",
-          "¼ כוס שמן זית",
-          "½1 כוס מים",
-        ],
-      },
-      {
-        category: "לציפוי",
-        items: [
-          "5 יחידות שיני שום כתושים",
-          "¼ כוס שמן זית",
-          "½ כפית מלח",
-          "1 כפית ממרח פסטו",
-        ],
-      },
-    ],
-    instructions: [
-      "במיקסר עם וו לישה, מערבבים את כל החומרים מלבד המים. מוסיפים מים בהדרגה עד שמתקבל בצק רך.",
-      "לשים במשך 10 דקות עד שהבצק רך ודביק. מכסים ומניחים להתפחה עד שהבצק מכפיל את גודלו.",
-      "מחלקים לכדורים ומניחים בתבנית להתפחה נוספת.",
-      "מכינים את התערובת לציפוי: כותשים את השום, מוסיפים שמן זית, מלח וממרח פסטו.",
-      "מברישים את הלחמניות ומכניסים לתנור שחומם ל־180 מעלות ל־20 דקות או עד הזהבה.",
-      "לאחר האפייה מברישים מעט שוב עם התערובת.",
-    ],
-  };
+  const recipe = recipes.find((r) => r.slug === "GarlicChallahRecipe");
 
   const handlePrint = () => window.print();
 
@@ -548,16 +505,16 @@ export default function GarlicChallahRecipe() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               סרטון הכנה
             </h2>
-            <div className="relative aspect-video bg-gray-200 rounded-2xl shadow-lg overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Play className="w-20 h-20 text-white/80" />
-              </div>
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded text-sm">
-                01:10
-              </div>
-              <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-8 text-gray-600 text-center">
-                מקום לסרטון הכנה
-              </p>
+            <div className="relative aspect-video rounded-2xl shadow-lg overflow-hidden bg-black">
+              <video
+                controls
+                preload="metadata"
+                poster={recipe.image}
+                className="absolute top-0 left-0 w-full h-full object-contain bg-brand-pink-500 rounded-2xl shadow-lg"
+              >
+                <source src={recipe.video} type="video/mp4" />
+                הדפדפן שלך לא תומך בצפייה בוידאו.
+              </video>
             </div>
           </AnimateOnScroll>
         </div>

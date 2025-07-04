@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { createPageUrl, createRecipeUrl } from "@/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -55,6 +55,7 @@ export default function Recipes() {
         return "bg-gray-100 text-gray-800";
     }
   };
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -122,7 +123,8 @@ export default function Recipes() {
                 לא נמצאו מתכונים
               </h3>
               <p className="text-gray-600 mb-8">
-                נסו לחפש במילים אחרות או לבחור קטגוריה אחרת
+                לא מצאתן את המתכון שחיפשתן? תפנו אליי ברשתות ואולי אעלה מתכון
+                בהמשך
               </p>
               <Button
                 onClick={() => {
@@ -209,7 +211,7 @@ export default function Recipes() {
                               </div>
                             </div>
 
-                            <Link to={createPageUrl(recipe.slug)}>
+                            <Link to={createRecipeUrl(recipe.slug)}>
                               <Button className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full font-semibold">
                                 <ChefHat className="w-4 h-4 ml-2" />
                                 צפייה במתכון המלא

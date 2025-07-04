@@ -15,79 +15,83 @@ import Contact from "./Contact";
 import CakeDesignWorkshop from "./WorkShopPages/CakeDesignWorkshop.jsx";
 
 import GarlicChallahRecipe from "./RecipesPages/GarlicChallahRecipe.jsx";
+import RecipePage from "./RecipesPages/RecipePage.jsx";
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 
 const PAGES = {
-    
-    Home: Home,
-    
-    Workshops: Workshops,
-    
-    About: About,
-    
-    Recipes: Recipes,
-    
-    Gallery: Gallery,
-    
-    Contact: Contact,
-    
-    CakeDesignWorkshop: CakeDesignWorkshop,
-    
-    GarlicChallahRecipe: GarlicChallahRecipe,
-    
-}
+  Home: Home,
+
+  Workshops: Workshops,
+
+  About: About,
+
+  Recipes: Recipes,
+
+  Gallery: Gallery,
+
+  Contact: Contact,
+
+  CakeDesignWorkshop: CakeDesignWorkshop,
+
+  GarlicChallahRecipe: GarlicChallahRecipe,
+};
 
 function _getCurrentPage(url) {
-    if (url.endsWith('/')) {
-        url = url.slice(0, -1);
-    }
-    let urlLastPart = url.split('/').pop();
-    if (urlLastPart.includes('?')) {
-        urlLastPart = urlLastPart.split('?')[0];
-    }
+  if (url.endsWith("/")) {
+    url = url.slice(0, -1);
+  }
+  let urlLastPart = url.split("/").pop();
+  if (urlLastPart.includes("?")) {
+    urlLastPart = urlLastPart.split("?")[0];
+  }
 
-    const pageName = Object.keys(PAGES).find(page => page.toLowerCase() === urlLastPart.toLowerCase());
-    return pageName || Object.keys(PAGES)[0];
+  const pageName = Object.keys(PAGES).find(
+    (page) => page.toLowerCase() === urlLastPart.toLowerCase()
+  );
+  return pageName || Object.keys(PAGES)[0];
 }
 
 // Create a wrapper component that uses useLocation inside the Router context
 function PagesContent() {
-    const location = useLocation();
-    const currentPage = _getCurrentPage(location.pathname);
-    
-    return (
-        <Layout currentPageName={currentPage}>
-            <Routes>            
-                
-                    <Route path="/" element={<Home />} />
-                
-                
-                <Route path="/Home" element={<Home />} />
-                
-                <Route path="/Workshops" element={<Workshops />} />
-                
-                <Route path="/About" element={<About />} />
-                
-                <Route path="/Recipes" element={<Recipes />} />
-                
-                <Route path="/Gallery" element={<Gallery />} />
-                
-                <Route path="/Contact" element={<Contact />} />
-                
-                <Route path="/CakeDesignWorkshop" element={<CakeDesignWorkshop />} />
-                
-                <Route path="/GarlicChallahRecipe" element={<GarlicChallahRecipe />} />
-                
-            </Routes>
-        </Layout>
-    );
+  const location = useLocation();
+  const currentPage = _getCurrentPage(location.pathname);
+
+  return (
+    <Layout currentPageName={currentPage}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/Home" element={<Home />} />
+
+        <Route path="/Workshops" element={<Workshops />} />
+
+        <Route path="/About" element={<About />} />
+
+        <Route path="/Recipes" element={<Recipes />} />
+        <Route path="/recipes/:slug" element={<RecipePage />} />
+
+        <Route path="/Gallery" element={<Gallery />} />
+
+        <Route path="/Contact" element={<Contact />} />
+
+        <Route path="/CakeDesignWorkshop" element={<CakeDesignWorkshop />} />
+
+        <Route path="/GarlicChallahRecipe" element={<GarlicChallahRecipe />} />
+      </Routes>
+    </Layout>
+  );
 }
 
 export default function Pages() {
-    return (
-        <Router>
-            <PagesContent />
-        </Router>
-    );
+  return (
+    <Router>
+      <PagesContent />
+    </Router>
+  );
 }
