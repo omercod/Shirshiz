@@ -29,7 +29,7 @@ export default function RecipePage() {
   if (!recipe) {
     return (
       <div className="min-h-screen flex items-center justify-center text-2xl">
-        מתכון לא נמצא 😢
+        מתכון לא נמצא
       </div>
     );
   }
@@ -44,9 +44,12 @@ export default function RecipePage() {
               margin: 1cm;
             }
             html, body {
-              width: 100%;
-              max-width: 900px;
-              margin: 0 auto;
+            width: 21cm;
+            max-width: 21cm;
+            margin: 0 auto;
+            box-sizing: border-box;
+            overflow-wrap: break-word;
+            word-break: break-word;
             }
             .no-print {
               display: none !important;
