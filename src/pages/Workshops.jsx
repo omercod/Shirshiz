@@ -77,7 +77,7 @@ export default function Workshops() {
                   {workshop.isFlagship && (
                     <Badge className="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-yellow-900 px-4 py-2 text-sm font-bold z-10">
                       <Crown className="w-4 h-4 ml-1" />
-                      מוצר הדגל
+                      קורס פרימיום
                     </Badge>
                   )}
                   <div className="relative h-56 overflow-hidden">
