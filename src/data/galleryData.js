@@ -7,7 +7,7 @@ export const galleryImages = [
   {
     src: "/assets/images/home/engade_lin.jpg",
     alt: "עוגת אירוסין",
-    categories: ["אירוסין"],
+    categories: ["וינטאג'", "אירוסין"],
   },
   {
     src: "/assets/images/home/HeartCake.jpg",
@@ -141,7 +141,7 @@ export const galleryImages = [
   },
   {
     src: "assets/images/gallery/spidermanCake.jpg",
-    alt: "עוגת ספיידרמן",
+    alt: "עוגה וקאפקייקס ספיידרמן",
     categories: ["יום הולדת", "מיוחדים"],
   },
   {
@@ -158,5 +158,80 @@ export const galleryImages = [
     src: "assets/images/gallery/weddingCockies.jpg",
     alt: "עוגיות חתונה",
     categories: ["מיוחדים", "מארזים"],
+  },
+  {
+    src: "/assets/images/gallery/bdayGold.jpg",
+    alt: "עוגת יום הולדת זהב",
+    categories: ["יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/beigeVin.jpg",
+    alt: "עוגת וינטאג' בז'",
+    categories: ["וינטאג'", "יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/born2day.jpg",
+    alt: "עוגת Born To Day",
+    categories: ["בנטו", "יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/brideToBe.jpg",
+    alt: "עוגת מסיבת רווקות",
+    categories: ["מיוחדים"],
+  },
+  {
+    src: "/assets/images/gallery/goldDesert.jpg",
+    alt: "מארז קינוחים זהב",
+    categories: ["מארזים"],
+  },
+  {
+    src: "/assets/images/gallery/idfBento.jpeg",
+    alt: "בנטו קבלת דרגה משטרה צבאית",
+    categories: ["בנטו"],
+  },
+  {
+    src: "/assets/images/gallery/liloAndStich.jpg",
+    alt: "עוגת לילו וסטיץ'",
+    categories: ["יום הולדת", "מיוחדים"],
+  },
+  {
+    src: "/assets/images/gallery/lottoCake.jpg",
+    alt: "עוגת לוטו",
+    categories: ["יום הולדת", "מיוחדים"],
+  },
+  {
+    src: "/assets/images/gallery/loveBento.jpeg",
+    alt: "בנטו I Love You",
+    categories: ["בנטו", "יום האהבה"],
+  },
+  {
+    src: "/assets/images/gallery/loveUben.jpg",
+    alt: "בנטו Love You",
+    categories: ["בנטו", "יום האהבה"],
+  },
+  {
+    src: "/assets/images/gallery/mikaBento.jpeg",
+    alt: "בנטו ורודה פרפרים",
+    categories: ["בנטו", "יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/officerBento.jpg",
+    alt: "בנטו קבלת דרגה",
+    categories: ["בנטו"],
+  },
+  {
+    src: "/assets/images/gallery/shahafBento.jpeg",
+    alt: "בנטו חום סוכריות",
+    categories: ["בנטו", "יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/whitePinkBen.jpeg",
+    alt: "בנטו לבן פפיונים ורודים ",
+    categories: ["בנטו", "יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/engage_shenhav.jpg",
+    alt: "עוגת טבעת למסיבת רווקות",
+    categories: ["מיוחדים"],
   },
 ];

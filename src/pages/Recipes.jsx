@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { createPageUrl, createRecipeUrl } from "@/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Clock, ChefHat, Heart, Search, Hash } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { recipes } from "../data/recipesData";
+
+function shuffleArray(array) {
+  return array
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+}
 
 export default function Recipes() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,17 +34,25 @@ export default function Recipes() {
         return "bg-green-100 text-green-800";
     }
   };
-  const filteredRecipes = recipes.filter((recipe) => {
-    const matchesSearch =
-      recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      recipe.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "הכל" || recipe.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
 
-  const featuredRecipes = filteredRecipes.filter((r) => r.featured);
-  const allRecipes = recipes;
+  const filteredRecipes = useMemo(() => {
+    return recipes.filter((recipe) => {
+      const matchesSearch =
+        recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory =
+        selectedCategory === "הכל" || recipe.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
+
+  const featuredRecipes = useMemo(() => {
+    return shuffleArray(filteredRecipes.filter((r) => r.featured));
+  }, [filteredRecipes]);
+
+  const allRecipes = useMemo(() => {
+    return shuffleArray(filteredRecipes);
+  }, [filteredRecipes]);
 
   const getCategoryColor = (category) => {
     switch (category) {

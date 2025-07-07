@@ -23,14 +23,14 @@ export default function Home() {
     {
       name: "תמר",
       details: "באר שבע",
-      text: "הייתי בקורס של שיר המהממת, בהתחלה כזה היה יותר קשה ולא היה לי ביטחון אבל עכשיו אני עם ביטחון עצום וזה כזה מזה כיף ויותר קל עכשיו, באמת שכדאי לכם, ממליצה מאוד!",
+      text: "הייתי בסדנה של שיר המהממת, בהתחלה כזה היה יותר קשה ולא היה לי ביטחון אבל עכשיו אני עם ביטחון עצום וזה כזה מזה כיף ויותר קל עכשיו, באמת שכדאי לכם, ממליצה מאוד!",
       rating: 5,
       image: "/assets/images/home/tamar_review.jpg",
     },
     {
       name: "דאנה ארובס",
       details: "תדהר",
-      text: "היה קורס מושלם!!!!!! והעוגה יצאה כל כך יפה וטעימה ובאה בול בשביל להרשים את כל המשפחה אחרי ארוחת שישי 🥰🥰🥰🥰🥰",
+      text: "הייתה סדנה מושלמת!!!!!! והעוגה יצאה כל כך יפה וטעימה ובאה בול בשביל להרשים את כל המשפחה אחרי ארוחת שישי 🥰🥰🥰🥰🥰",
       rating: 5,
       image: "/assets/images/home/dana_review.jpg",
     },
@@ -55,13 +55,13 @@ export default function Home() {
       icon: Cake,
       title: "עיצוב עוגת וינטג’",
       description:
-        "קורס חד פעמי שבו תלמדי לעצב עוגת וינטג' מהממת, שלב אחרי שלב, בעזרת קרם חמאה שוויצרי איכותי. בסוף הקורס תצאי עם עוגה מעוצבת שלא תאמיני שהכנת, וכלים שילוו אותך בהמשך הדרך.",
+        "סדנה חד פעמית שבו תלמדי לעצב עוגת וינטג' מהממת, שלב אחרי שלב, בעזרת קרם חמאה שוויצרי איכותי. בסוף הסדנה תצאי עם עוגה מעוצבת שלא תאמיני שהכנת, וכלים שילוו אותך בהמשך הדרך.",
     },
     {
       icon: Star,
       title: "מאפס למקצוענית",
       description:
-        "קורס מעמיק ויצירתי הכולל שני מפגשים מקצועיים - מתאים במיוחד למי שרוצה לקחת את התחביב צעד קדימה ולהתמקצע בתחום! תלמדי לעצב עוגת בנטו, קאפקייקס ועוגה מעוצבת עם אלמנטים של דף סוכר וצימקאו.",
+        "סדנה מעמיקה ויצירתית הכוללת שני מפגשים מקצועיים - מתאים במיוחד למי שרוצה לקחת את התחביב צעד קדימה ולהתמקצע בתחום! תלמדי לעצב עוגת בנטו, קאפקייקס ועוגה מעוצבת עם אלמנטים של דף סוכר וצימקאו.",
       isHighlighted: true,
     },
     {
@@ -74,7 +74,7 @@ export default function Home() {
       icon: Users,
       title: "חוויית לקוח מקצועית ומקיפה",
       description:
-        "חשוב לי ללוות אתכן עם תשומת לב אישית לאורך כל התהליך. מרגע ביצוע ההזמנה ועד האיסוף, או מרגע ההרשמה לקורס ועד להגעתכן אליי, אני כאן בשבילכן עם יחס חם, זמינות ותמיכה.",
+        "חשוב לי ללוות אתכן עם תשומת לב אישית לאורך כל התהליך. מרגע ביצוע ההזמנה ועד האיסוף, או מרגע ההרשמה לסדנה ועד להגעתכן אליי, אני כאן בשבילכן עם יחס חם, זמינות ותמיכה.",
     },
   ];
   const [selectedImage, setSelectedImage] = useState(null);
@@ -110,8 +110,8 @@ export default function Home() {
                   className="h-28 md:h-36 lg:h-44"
                 />
               </div>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-brand-pink-600 mb-6">
-                עוגות מעוצבות וקורסים
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-brand-pink-600 mb-6 tracking-tight">
+                עוגות מעוצבות וסדנאות
               </h2>
               <p className="text-md md:text-lg text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto">
                 תמיד היה לך חיבור לעיצוב עוגות ורצית לדעת איך לקחת את זה צעד אחד
@@ -125,7 +125,7 @@ export default function Home() {
                     className="bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full px-8 py-4 text-lg font-semibold shadow-lg hover-lift transition-all duration-300"
                   >
                     <ChefHat className="w-5 h-5 ml-2" />
-                    פרטים נוספים על הקורסים
+                    פרטים נוספים על הסדנאות
                   </Button>
                 </Link>
                 <Link to={createPageUrl("Contact")}>
@@ -159,7 +159,7 @@ export default function Home() {
                 לאירוע שלכם - כי כל רגע מיוחד שווה חוויה מתוקה ובלתי נשכחת.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                בנוסף, אני מזמינה אתכן לקורס עיצוב עוגות מקצועי וחווייתי, שבו
+                בנוסף, אני מזמינה אתכן לסדנת עיצוב עוגות מקצועית וחווייתית, שבו
                 תלמדו לעצב עוגה בעצמכן – גם אם אין לכן ניסיון קודם. תצאו עם עוגה
                 מהממת, כלים פרקטיים, ביטחון, והרבה השראה להמשיך ליצור גם בבית.
               </p>
@@ -191,7 +191,7 @@ export default function Home() {
               מה אני מציעה
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              קורסים מקצועיים שבו תלמדי לעצב עוגה בעצמך - גם בלי ניסיון, ומגוון
+              סדנאות מקצועיות שבו תלמדי לעצב עוגה בעצמך - גם בלי ניסיון, ומגוון
               של עוגות ומתוקים בעיצוב אישי שמותאמות בדיוק לאירוע שלך!
             </p>
           </AnimateOnScroll>
@@ -253,7 +253,7 @@ export default function Home() {
               קצת מאחורי הקלעים
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              כאן תוכלו לראות את הרגעים בהם אני יוצרת, מעצבת ומלמדת בקורסים.
+              כאן תוכלו לראות את הרגעים בהם אני יוצרת, מעצבת ומלמדת בסדנאות.
             </p>
           </AnimateOnScroll>
 
@@ -272,18 +272,18 @@ export default function Home() {
                 className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/workShopVideo.mp4");
-                  setSelectedVideoAlt("קורס זוגי");
+                  setSelectedVideoAlt("סדנה זוגית");
                 }}
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => {
                   setSelectedVideo("/assets/videos/workShopVideo.mp4");
-                  setSelectedVideoAlt("קורס זוגי");
+                  setSelectedVideoAlt("סדנה זוגית");
                 }}
               >
                 <Video className="w-16 h-16 text-white mb-2" />
-                <p className="text-sm font-medium text-white">קורס זוגי </p>
+                <p className="text-sm font-medium text-white">סדנה זוגית </p>
               </div>
             </AnimateOnScroll>
 
@@ -547,7 +547,7 @@ export default function Home() {
               מה מספרות הלקוחות שלי
             </h2>
             <p className="text-lg text-gray-600">
-              הצצה אמיתית לחוויה של הלקוחות ומשתתפות הקורסים
+              הצצה אמיתית לחוויה של הלקוחות ומשתתפות הסדנאות
             </p>
           </AnimateOnScroll>
 
@@ -580,7 +580,7 @@ export default function Home() {
                       {testimonial.text}
                     </p>
                     <div
-                      className="group relative w-full aspect-[4/3] rounded-lg shadow-md overflow-hidden cursor-pointer"
+                      className="group relative w-full h-40 md:h-52 rounded-lg shadow-md overflow-hidden cursor-pointer"
                       onClick={() => setSelectedImage(testimonial.image)}
                     >
                       <img
@@ -665,7 +665,7 @@ export default function Home() {
                     דברו איתי
                   </h2>
                   <p className="text-gray-600 mb-6">
-                    רוצות להזמין עוגה, לקבוע קורס או סתם להתייעץ? השאירו פרטים
+                    רוצות להזמין עוגה, לקבוע סדנה או סתם להתייעץ? השאירו פרטים
                     ואחזור אליכן בהקדם.
                   </p>
                   <ContactForm />
@@ -693,7 +693,7 @@ export default function Home() {
             מוכנות להתחיל את המסע שלכן?
           </h2>
           <p className="text-xl mb-8 text-brand-pink-100">
-            הצטרפו לקורסים מקצועיים בעולם הקונדטוריה ולמדו ליצור עוגות מדהימות
+            הצטרפו לסדנאות מקצועיות בעולם הקונדטוריה ולמדו ליצור עוגות מדהימות
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to={createPageUrl("Workshops")}>
@@ -702,7 +702,7 @@ export default function Home() {
                 className="bg-white text-brand-pink-600 hover:bg-gray-50 rounded-full px-8 py-4 text-lg font-semibold hover-lift"
               >
                 <ChefHat className="w-5 h-5 ml-2" />
-                צפו בקורסים הזמינים
+                צפו בסדנאות הזמינות
               </Button>
             </Link>
             <Link to={createPageUrl("Contact")}>

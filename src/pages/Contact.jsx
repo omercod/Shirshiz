@@ -1,7 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, Instagram, MapPin, Send } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Instagram,
+  MapPin,
+  Send,
+  MessageSquare,
+} from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Contact() {
   return (
@@ -124,75 +137,57 @@ export default function Contact() {
           </div>
 
           {/* FAQ Section */}
-          <div className="mt-20">
-            <AnimateOnScroll
-              animation="slide-up"
-              as="h2"
-              className="text-3xl font-bold text-brand-pink-600 text-center mb-12"
-            >
-              שאלות נפוצות
-            </AnimateOnScroll>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <AnimateOnScroll animation="slide-up" delay={0.1}>
-                <Card className="border-0 shadow-lg hover-lift">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">
-                      אפשר לבחור טעמים ומילויים?
-                    </h3>
-                    <p className="text-gray-600">
-                      בטח! חשוב לי שהעוגה תתאים בדיוק לטעמים שאתם אוהבים. אני
-                      כאן כדי להמליץ לכם את השילוב המושלם שיהפוך את העוגה לא רק
-                      ליפה, אלא גם לכזו שלא תוכלו להפסיק ללקק את האצבעות.
-                    </p>
-                  </CardContent>
-                </Card>
+          <section className="py-20 bg-white">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <AnimateOnScroll
+                animation="slide-up"
+                className="text-center mb-12"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
+                  <MessageSquare className="w-8 h-8 text-brand-pink-500" />
+                  שאלות נפוצות
+                </h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                  אספתי את כל השאלות שאתן שואלות אותי הכי הרבה - כדי שיהיה לכן
+                  הכי ברור ונוח
+                </p>
               </AnimateOnScroll>
-
-              <AnimateOnScroll animation="slide-up" delay={0.2}>
-                <Card className="border-0 shadow-lg hover-lift">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">
-                      אם אני לא יצירתית – הסדנה בכל זאת מתאימה לי?
-                    </h3>
-                    <p className="text-gray-600">
-                      כן! חשוב לי להדגיש שכל מי שמגיעה אליי לסדנה, גם מי שללא
-                      ניסיון, יוצאת עם עוגה שהיא עיצבה לגמרי בעצמה! אנחנו
-                      מתעמקות על כל הטכניקות כדי שתתמקצעו ותצאו עם עוגה שלא
-                      תאמינו שהכנתן!
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll animation="slide-up" delay={0.3}>
-                <Card className="border-0 shadow-lg hover-lift">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">
-                      האם מקבלים חוברת מתכונים והסברים שנוכל להמשיך להכין בבית?
-                    </h3>
-                    <p className="text-gray-600">
-                      כמובן! בסיום הסדנאות אתן יוצאות עם חוברת מתכונים והסברים
-                      ועם עוגה שעיצבתן בעצמכן, ובנוסף לזה בכל סדנה יש בונוסים
-                      ייחודיים ושווים!
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-              <AnimateOnScroll animation="slide-up" delay={0}>
-                <Card className="border-0 shadow-lg hover-lift">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">
-                      כמה זמן מראש צריך להזמין עוגה?
-                    </h3>
-                    <p className="text-gray-600">
-                      זה מאוד תלוי בעיצוב ובגודל העוגה, בדרך כלל ממליצה שבועיים
-                      מראש אבל כמה שיותר מוקדם יותר טוב.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
+              <Accordion type="single" collapsible className="w-full mt-10">
+                {[
+                  {
+                    q: "אפשר לבחור טעמים ומילויים?",
+                    a: "בטח! חשוב לי שהעוגה תתאים בדיוק לטעמים שאתם אוהבים. אני כאן כדי להמליץ לכן את השילוב המושלם שיהפוך את העוגה לא רק ליפה, אלא גם לכזו שלא תוכלו להפסיק ללקק את האצבעות.",
+                  },
+                  {
+                    q: "אם אני לא יצירתית, הסדנה בכל זאת מתאימה לי?",
+                    a: "כן! גם בלי ניסיון קודם תצאי מהסדנה עם עוגה מהממת שעיצבת בעצמך. נעבור יחד על כל הטכניקות כדי שתרגישי בטוחה, ותצאי עם תוצאה שלא תאמיני שזו את הכנת.",
+                  },
+                  {
+                    q: "האם מקבלים חוברת מתכונים והסברים להמשך בבית?",
+                    a: "ברור! בסוף כל סדנה תקבלי חוברת מתכונים והסברים מפורטים, וגם בונוסים ייחודיים שיעזרו לך להמשיך ליצור בבית.",
+                  },
+                  {
+                    q: "כמה זמן מראש צריך להזמין עוגה?",
+                    a: "זה תלוי בעיצוב ובמועד המבוקש, אבל לרוב מומלץ לפחות שבועיים מראש כדי לשריין. כמובן שאם יש לך תאריך, דברי איתי ונראה מה אפשרי.",
+                  },
+                ].map((item, i) => (
+                  <AnimateOnScroll key={i} animation="slide-up" delay={i * 0.1}>
+                    <AccordionItem
+                      value={`item-${i}`}
+                      className="bg-white border-0 shadow-md rounded-lg mb-4"
+                    >
+                      <AccordionTrigger className="p-6 text-xl md:text-xl font-semibold text-right hover:no-underline">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="p-6 pt-0 text-gray-600 text-lg leading-relaxed">
+                        {item.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </AnimateOnScroll>
+                ))}
+              </Accordion>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>

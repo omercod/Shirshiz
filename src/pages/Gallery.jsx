@@ -52,7 +52,7 @@ export default function Gallery() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               אוסף התמונות מהעבודות שלי לאורך השנים - עוגות, קישוטים, ויצירות
               מתוך הסדנאות. כל תמונה מספרת סיפור של יצירתיות, דייקנות ואהבה
-              למלאכה.
+              לתחום.
             </p>
           </AnimateOnScroll>
         </div>

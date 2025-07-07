@@ -4,13 +4,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
+import PropTypes from "prop-types";
 
-export default function ContactForm() {
+ContactForm.propTypes = {
+  productName: PropTypes.string,
+};
+
+export default function ContactForm({ productName = null }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: productName ? `אני רוצה להירשם ל${productName}` : "",
   });
 
   const handleInputChange = (e) => {
@@ -23,8 +28,13 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("תודה על פנייתכם! אחזור אליכם בהקדם האפשרי.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    alert("תודה על פנייתך! אחזור אליך בהקדם האפשרי.");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: productName ? `אני רוצה להירשם ל${productName}` : "",
+    });
   };
 
   return (
@@ -45,7 +55,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleInputChange}
             className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500"
-            placeholder="השם שלכן"
+            placeholder="השם שלך"
           />
         </div>
         <div>
@@ -85,30 +95,33 @@ export default function ContactForm() {
           placeholder="your@email.com"
         />
       </div>
-      <div>
-        <Label
-          htmlFor="home-message"
-          className="text-sm font-medium text-gray-700 mb-2 block"
-        >
-          הודעה *
-        </Label>
-        <Textarea
-          id="home-message"
-          name="message"
-          required
-          rows={4}
-          value={formData.message}
-          onChange={handleInputChange}
-          className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500 resize-none"
-          placeholder="ספרי לי בקצרה מה תרצי לדעת..."
-        />
-      </div>
+      {/* שדה ההודעה יופיע רק אם זה לא טופס של מוצר ספציפי */}
+      {!productName && (
+        <div>
+          <Label
+            htmlFor="home-message"
+            className="text-sm font-medium text-gray-700 mb-2 block"
+          >
+            הודעה *
+          </Label>
+          <Textarea
+            id="home-message"
+            name="message"
+            required
+            rows={4}
+            value={formData.message}
+            onChange={handleInputChange}
+            className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500 resize-none"
+            placeholder="ספרי לי בקצרה מה תרצי לדעת..."
+          />
+        </div>
+      )}
       <Button
         type="submit"
-        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-3 text-lg font-semibold hover-lift"
+        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
       >
-        <Send className="w-5 h-5 ml-2" />
-        שליחת הודעה
+        <Send className="w-6 h-6 ml-2" />
+        {productName ? "יאללה, אני רוצה להתחיל!" : "שליחת הודעה"}
       </Button>
     </form>
   );

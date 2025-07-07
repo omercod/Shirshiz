@@ -23,7 +23,7 @@ export default function About() {
     {
       icon: Clock,
       title: "זמינות מלאה",
-      description: "ליווי וייעוץ גם אחרי הקורס",
+      description: "ליווי וייעוץ גם אחרי הסדנה",
     },
   ];
 
@@ -49,7 +49,7 @@ export default function About() {
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  אני שיר, מעצבת עוגות ומתוקים בהתאמה אישית ומנחת קורסים לעיצוב
+                  אני שיר, מעצבת עוגות ומתוקים בהתאמה אישית ומנחת סדנאות לעיצוב
                   עוגות.
                 </p>
 
@@ -100,7 +100,7 @@ export default function About() {
               <AnimateOnScroll
                 key={index}
                 animation="slide-up"
-                delay={index * 0.1}
+                delay={index * 0.3}
               >
                 <Card className="h-full hover-lift border-0 shadow-lg text-center bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-8">

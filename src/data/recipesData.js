@@ -156,7 +156,7 @@ export const recipes = [
     prepTime: "10 דקות",
     cookTime: "20 דקות",
     servings: "כ-20 קינוחי כוסות",
-    featured: true,
+    featured: false,
     slug: "CupsDesertsRecipe",
     ingredients: [
       {
@@ -201,7 +201,7 @@ export const recipes = [
     prepTime: "20 דקות",
     cookTime: "10 דקות",
     servings: "8-10 קוקילידות",
-    featured: true,
+    featured: false,
     slug: "PassoverCockielidaRecipe",
     ingredients: [
       {
@@ -258,7 +258,7 @@ export const recipes = [
     prepTime: "10 דקות",
     cookTime: "30 דקות",
     servings: "4 מנות",
-    featured: true,
+    featured: false,
     slug: "OfersFishRecipe",
     ingredients: [
       {

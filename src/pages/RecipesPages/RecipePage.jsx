@@ -330,7 +330,7 @@ export default function RecipePage() {
       </style>
 
       <Helmet>
-        <title>{`${recipe.title} - מתכון של SHIRSHIZ`}</title>
+        <title>SHIRSHIZ</title>
         <meta
           property="og:title"
           content={`${recipe.title} - מתכון של SHIRSHIZ`}
@@ -453,7 +453,7 @@ export default function RecipePage() {
                               d="M8 16h8m-4-4h4m-2-4h6a2 2 0 012 2v10a2 2 0 01-2 2h-6m-4 0H6a2 2 0 01-2-2V6a2 2 0 012-2h6"
                             />
                           </svg>
-                          העתק קישור
+                          העתיקי קישור
                         </button>
                       </div>
                     </div>

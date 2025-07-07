@@ -30,7 +30,7 @@ export default function Layout({ children }) {
 
   const navigationItems = [
     { title: "בית", url: createPageUrl("Home") },
-    { title: "קורסים", url: createPageUrl("Workshops") },
+    { title: "סדנאות", url: createPageUrl("Workshops") },
     { title: "קצת עליי", url: createPageUrl("About") },
     { title: "מתכונים", url: createPageUrl("Recipes") },
     { title: "גלריה", url: createPageUrl("Gallery") },
@@ -146,7 +146,7 @@ export default function Layout({ children }) {
                     px-6
                   "
                 >
-                  הרשמה לקורס
+                  הרשמה לסדנה
                 </Button>
               </Link>
             </nav>
@@ -186,7 +186,7 @@ export default function Layout({ children }) {
               <div className="pt-2">
                 <Link to={createPageUrl("Workshops")} className="w-full">
                   <Button className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full">
-                    הרשמה לקורס
+                    הרשמה לסדנה
                   </Button>
                 </Link>
               </div>
@@ -219,7 +219,7 @@ export default function Layout({ children }) {
                 </div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">
-                מעצבת עוגות ומתוקים בהתאמה אישית, מעבירה קורסים מקצועיים לעיצוב
+                מעצבת עוגות ומתוקים בהתאמה אישית, מעבירה סדנאות מקצועיות לעיצוב
                 עוגות.
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function Layout({ children }) {
 
           <div className="border-t border-brand-pink-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © 2025 SHIRSHIZ - עוגות מעוצבות וקורסים. כל הזכויות שמורות.
+              © 2025 SHIRSHIZ - עוגות מעוצבות וסדנאות. כל הזכויות שמורות.
             </p>
             <p className="text-gray-500 text-sm mt-2 md:mt-0">
               Made By Omer_cl
