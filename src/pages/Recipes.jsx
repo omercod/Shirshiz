@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Clock, Users, ChefHat, Heart, Search } from "lucide-react";
+import { Clock, ChefHat, Heart, Search, Hash } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { recipes } from "../data/recipesData";
 
@@ -206,7 +206,7 @@ export default function Recipes() {
                                 {recipe.time}
                               </div>
                               <div className="flex items-center">
-                                <Users className="w-4 h-4 ml-2 text-brand-pink-500" />
+                                <Hash className="w-4 h-4 ml-2 text-brand-pink-500" />
                                 {recipe.servings}
                               </div>
                             </div>
@@ -280,13 +280,13 @@ export default function Recipes() {
                               {recipe.description}
                             </p>
 
-                            <div className="grid grid-cols-2 gap-2 mb-4 text-xs text-gray-500">
+                            <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-500">
                               <div className="flex items-center">
-                                <Clock className="w-3 h-3 ml-1 text-brand-pink-500" />
+                                <Clock className="w-4 h-4 ml-2 text-brand-pink-500" />
                                 {recipe.time}
                               </div>
                               <div className="flex items-center">
-                                <Users className="w-3 h-3 ml-1 text-brand-pink-500" />
+                                <Hash className="w-4 h-4 ml-2 text-brand-pink-500" />
                                 {recipe.servings}
                               </div>
                             </div>

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, Instagram, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, Instagram, MapPin, Send } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
 
@@ -22,7 +22,7 @@ export default function Contact() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               יצירת קשר
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               יש לכן שאלות על הסדנאות? רוצות לשמוע עוד פרטים? אני כאן בשבילכן
               ואשמח לעזור בכל דבר!
             </p>
@@ -64,7 +64,12 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">טלפון</p>
-                        <p className="text-gray-600">054-123-4567</p>
+                        <a
+                          href="tel:0505307961"
+                          className="text-gray-600 hover:text-brand-pink-600 transition-colors"
+                        >
+                          050-5307961
+                        </a>
                       </div>
                     </div>
 
@@ -74,7 +79,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">מייל</p>
-                        <p className="text-gray-600">shir@shirshiz.com</p>
+                        <p className="text-gray-600">shirazaria1@gmail.com</p>
                       </div>
                     </div>
 
@@ -85,48 +90,14 @@ export default function Contact() {
                       <div>
                         <p className="font-semibold text-gray-900">אינסטגרם</p>
                         <a
-                          href="#"
+                          href="https://www.instagram.com/shirshiz_/"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-brand-pink-600 hover:text-brand-pink-500 transition-colors"
                         >
-                          @shirshiz_cakes
+                          _shirshiz@
                         </a>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll animation="slide-up" delay={0.2}>
-                <Card className="border-0 shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-bold text-gray-900 flex items-center">
-                      <Clock className="w-5 h-5 ml-2 text-brand-pink-600" />
-                      שעות פעילות
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">ראשון - חמישי</span>
-                        <span className="font-semibold text-gray-900">
-                          09:00 - 18:00
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">שישי</span>
-                        <span className="font-semibold text-gray-900">
-                          09:00 - 14:00
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-700">שבת</span>
-                        <span className="text-gray-500">סגור</span>
-                      </div>
-                    </div>
-                    <div className="mt-4 p-3 bg-brand-pink-50 rounded-lg">
-                      <p className="text-sm text-brand-pink-600">
-                        הסדנאות מתקיימות גם בערבים ובסופי שבוע לפי תיאום מראש
-                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -142,15 +113,10 @@ export default function Contact() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 mb-4">
-                      הסדנאות מתקיימות בסטודיו הפרטי שלי במרכז הארץ. המיקום
-                      המדויק יישלח עם אישור ההרשמה.
+                      הסדנאות מתקיימות בדירה שלי בבאר שבע.
+                      <br />
+                      המיקום המדויק יישלח עם אישור הרשמה ושריון תאריך לסדנה.
                     </p>
-                    <div className="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
-                      <div className="text-center text-gray-500">
-                        <MapPin className="w-8 h-8 mx-auto mb-2" />
-                        <p>מפה תוצג כאן</p>
-                      </div>
-                    </div>
                   </CardContent>
                 </Card>
               </AnimateOnScroll>
@@ -162,34 +128,21 @@ export default function Contact() {
             <AnimateOnScroll
               animation="slide-up"
               as="h2"
-              className="text-3xl font-bold text-gray-900 text-center mb-12"
+              className="text-3xl font-bold text-brand-pink-600 text-center mb-12"
             >
               שאלות נפוצות
             </AnimateOnScroll>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <AnimateOnScroll animation="slide-up" delay={0}>
-                <Card className="border-0 shadow-lg hover-lift">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">
-                      כמה זמן אורכת כל סדנה?
-                    </h3>
-                    <p className="text-gray-600">
-                      אורך הסדנה משתנה בהתאם לנושא - בין 3 ל-8 שעות. הפרטים
-                      המדויקים מופיעים בתיאור כל סדנה.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-
               <AnimateOnScroll animation="slide-up" delay={0.1}>
                 <Card className="border-0 shadow-lg hover-lift">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-gray-900 mb-3">
-                      האם צריך ניסיון קודם?
+                      אפשר לבחור טעמים ומילויים?
                     </h3>
                     <p className="text-gray-600">
-                      לא בהכרח! יש לי סדנאות לכל הרמות - ממתחילות מוחלטות ועד
-                      מתקדמות. כל סדנה מסומנת ברמת הקושי שלה.
+                      בטח! חשוב לי שהעוגה תתאים בדיוק לטעמים שאתם אוהבים. אני
+                      כאן כדי להמליץ לכם את השילוב המושלם שיהפוך את העוגה לא רק
+                      ליפה, אלא גם לכזו שלא תוכלו להפסיק ללקק את האצבעות.
                     </p>
                   </CardContent>
                 </Card>
@@ -199,11 +152,13 @@ export default function Contact() {
                 <Card className="border-0 shadow-lg hover-lift">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-gray-900 mb-3">
-                      מה כלול במחיר הסדנה?
+                      אם אני לא יצירתית – הסדנה בכל זאת מתאימה לי?
                     </h3>
                     <p className="text-gray-600">
-                      כל החומרים, כלי העבודה, הדרכה אישית, ובסוף הסדנה אתן
-                      לוקחות הביתה את מה שיצרתן!
+                      כן! חשוב לי להדגיש שכל מי שמגיעה אליי לסדנה, גם מי שללא
+                      ניסיון, יוצאת עם עוגה שהיא עיצבה לגמרי בעצמה! אנחנו
+                      מתעמקות על כל הטכניקות כדי שתתמקצעו ותצאו עם עוגה שלא
+                      תאמינו שהכנתן!
                     </p>
                   </CardContent>
                 </Card>
@@ -213,11 +168,25 @@ export default function Contact() {
                 <Card className="border-0 shadow-lg hover-lift">
                   <CardContent className="p-6">
                     <h3 className="font-semibold text-gray-900 mb-3">
-                      איך מבטלים הרשמה?
+                      האם מקבלים חוברת מתכונים והסברים שנוכל להמשיך להכין בבית?
                     </h3>
                     <p className="text-gray-600">
-                      ביטול עד 48 שעות לפני הסדנה - החזר מלא. ביטול בפחות מ-48
-                      שעות - החזר של 50%.
+                      כמובן! בסיום הסדנאות אתן יוצאות עם חוברת מתכונים והסברים
+                      ועם עוגה שעיצבתן בעצמכן, ובנוסף לזה בכל סדנה יש בונוסים
+                      ייחודיים ושווים!
+                    </p>
+                  </CardContent>
+                </Card>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="slide-up" delay={0}>
+                <Card className="border-0 shadow-lg hover-lift">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold text-gray-900 mb-3">
+                      כמה זמן מראש צריך להזמין עוגה?
+                    </h3>
+                    <p className="text-gray-600">
+                      זה מאוד תלוי בעיצוב ובגודל העוגה, בדרך כלל ממליצה שבועיים
+                      מראש אבל כמה שיותר מוקדם יותר טוב.
                     </p>
                   </CardContent>
                 </Card>
