@@ -45,7 +45,7 @@ export default function Workshops() {
       <div className="bg-gradient-to-bl from-brand-pink-100 via-beige-50 to-brand-pink-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-200 rounded-full opacity-20 -translate-y-32 translate-x-32"></div>
         <div className="absolute top-20 left-10 w-32 h-32 bg-beige-200 rounded-full opacity-30"></div>
-        <div className="relative pt-20 pb-10">
+        <div className="relative pt-14 pb-10">
           <AnimateOnScroll
             animation="fade-in"
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
