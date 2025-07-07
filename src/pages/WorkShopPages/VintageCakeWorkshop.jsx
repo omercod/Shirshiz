@@ -197,7 +197,7 @@ export default function VintageCakeWorkshop() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="slide-up" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
-              <Sparkles className="w-8 h-8 text-brand-pink-500" />
+              <Sparkles className="w-20 h-20 md:w-12 md:h-12 text-brand-pink-500" />
               הקסם קורה כאן: מה נלמד בסדנה?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -420,7 +420,7 @@ export default function VintageCakeWorkshop() {
             <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-brand-pink-100 to-beige-100">
               <div className="p-12 text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
-                  <Send className="w-8 h-8 ml-3 text-brand-pink-600" />
+                  <Send className="w-20 h-20 md:w-12 md:h-12 ml-3 text-brand-pink-600" />
                   מוכנה ליצור את עוגת החלומות שלך?
                 </h2>
                 <p className="text-gray-600 mb-8 max-w-xl mx-auto">

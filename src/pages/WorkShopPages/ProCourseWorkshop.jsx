@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Accordion,
@@ -109,9 +108,6 @@ export default function ProCourseWorkshop() {
           animation="fade-in"
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
         >
-          <Badge className="hidden md:block bg-gradient-to-r from-yellow-400 to-amber-500 text-yellow-900 mb-4 text-md px-5 py-1">
-            קורס הדגל
-          </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
             קורס מאפס למקצוענית
           </h1>
@@ -162,7 +158,7 @@ export default function ProCourseWorkshop() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="slide-up" className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
-              <Sparkles className="w-8 h-8 text-brand-pink-500" />
+              <Sparkles className="w-20 h-20 md:w-12 md:h-12 text-brand-pink-500" />
               המסלול שלך להצלחה: שני מפגשים שהופכים אותך למקצוענית
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -278,7 +274,7 @@ export default function ProCourseWorkshop() {
                   key={i}
                   className="text-center border-0 shadow-lg p-6 hover-lift bg-beige-50"
                 >
-                  <item.icon className="w-12 h-12 text-brand-pink-500 mx-auto mb-4" />
+                  <item.icon className="w-12 h-12 sm:w-10 sm:h-10 text-brand-pink-500 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-gray-800 mb-2">
                     {item.title}
                   </h3>
@@ -326,7 +322,7 @@ export default function ProCourseWorkshop() {
             <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-brand-pink-100 to-beige-100">
               <div className="p-12 text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
-                  <Send className="w-8 h-8 ml-3 text-brand-pink-600" />
+                  <Send className="w-20 h-20 md:w-12 md:h-12 ml-3 text-brand-pink-600" />
                   מוכנה להפוך את האהבה למקצוע?
                 </h2>
                 <p className="text-gray-600 mb-8 max-w-xl mx-auto">
