@@ -109,7 +109,7 @@ export default function ProCourseWorkshop() {
           animation="fade-in"
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
         >
-          <Badge className="bg-gradient-to-r from-yellow-400 to-amber-500 text-yellow-900 mb-4 text-md px-5 py-1">
+          <Badge className="hidden md:block bg-gradient-to-r from-yellow-400 to-amber-500 text-yellow-900 mb-4 text-md px-5 py-1">
             קורס הדגל
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
