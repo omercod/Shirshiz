@@ -112,10 +112,10 @@ export default function ProCourseWorkshop() {
           <Badge className="bg-gradient-to-r from-yellow-400 to-amber-500 text-yellow-900 mb-4 text-md px-5 py-1">
             קורס הדגל
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
             קורס מאפס למקצוענית
           </h1>
-          <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
             המסלול המלא להפוך את התשוקה שלך למקצוע
           </p>
           <Button
@@ -240,7 +240,7 @@ export default function ProCourseWorkshop() {
       </section>
 
       {/* CTA Section */}
-      <section className=" pt-10 bg-white">
+      <section className="pt-10 bg-white">
         <AnimateOnScroll
           animation="fade-in"
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"

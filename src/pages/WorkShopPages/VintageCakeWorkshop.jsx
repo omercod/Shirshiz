@@ -123,10 +123,10 @@ export default function VintageCakeWorkshop() {
           animation="fade-in"
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
             גלי את סודות עוגות הוינטג&apos;
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
             בסדנה חווייתית אחת, תלמדי את כל הטכניקות ליצירת עוגות מרשימות
             וטעימות בקרם חמאה שוויצרי.
           </p>
