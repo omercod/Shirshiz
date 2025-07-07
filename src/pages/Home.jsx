@@ -654,7 +654,7 @@ export default function Home() {
       )}
 
       {/* Home Page Contact Form */}
-      <section className="py-20 bg-white">
+      <section className="pb-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="slide-up">
             <Card className="border-0 shadow-2xl overflow-hidden">
