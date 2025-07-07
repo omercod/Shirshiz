@@ -4,6 +4,7 @@ import { createPageUrl } from "@/utils";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PropTypes from "prop-types";
+import AccessibilityMenu from "@/components/AccessibilityMenu";
 
 export default function Layout({ children }) {
   const location = useLocation();
@@ -79,6 +80,8 @@ export default function Layout({ children }) {
           }
         `}
       </style>
+
+      <AccessibilityMenu />
 
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-pink-100 shadow-sm">
