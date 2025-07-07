@@ -116,7 +116,7 @@ export default function VintageCakeWorkshop() {
             alt="סדנת עוגות וינטג'"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         </div>
 
         <AnimateOnScroll

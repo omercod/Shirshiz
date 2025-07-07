@@ -129,7 +129,7 @@ export default function ProCourseWorkshop() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 bg-white">
+      <section className="pb-20 pt-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimateOnScroll animation="slide-up">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -240,7 +240,7 @@ export default function ProCourseWorkshop() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section className=" pt-10 bg-white">
         <AnimateOnScroll
           animation="fade-in"
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
