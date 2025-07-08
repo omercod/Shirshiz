@@ -36,7 +36,6 @@ export default function ContactForm({ productName = null }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // בונה את ה-FormData לשליחה
     const data = new FormData();
     data.append("form-name", formName);
     data.append("name", formData.name);
@@ -44,7 +43,18 @@ export default function ContactForm({ productName = null }) {
     data.append("phone", formData.phone);
     data.append("message", formData.message);
 
-    // שולח ל-Netlify
+    // Subject לפי סוג הטופס
+    if (formName === "ProWorkshop") {
+      data.append(
+        "subject",
+        `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+      );
+    } else if (formName === "VintageWorkshop") {
+      data.append("subject", `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`);
+    } else {
+      data.append("subject", `${formData.name} השאיר/ה לך פניה`);
+    }
+
     fetch("/", {
       method: "POST",
       body: data,
@@ -59,8 +69,8 @@ export default function ContactForm({ productName = null }) {
         });
       })
       .catch((error) => {
-        alert("שגיאה בשליחת הטופס. נסה שוב מאוחר יותר.");
         console.error(error);
+        alert("אירעה שגיאה בשליחת הטופס. נסה/י שוב מאוחר יותר.");
       });
   };
 
@@ -75,6 +85,30 @@ export default function ContactForm({ productName = null }) {
     >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="bot-field" />
+
+      {productName === "קורס מאפס למקצוענית" && (
+        <input
+          type="hidden"
+          name="subject"
+          value={`${formData.name} רוצה להירשם לקורס מאפס למקצוענית`}
+        />
+      )}
+
+      {productName === "סדנת עוגת וינטאג'" && (
+        <input
+          type="hidden"
+          name="subject"
+          value={`${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`}
+        />
+      )}
+
+      {!productName && (
+        <input
+          type="hidden"
+          name="subject"
+          value={`${formData.name} השאיר/ה לך פניה`}
+        />
+      )}
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -128,14 +162,17 @@ export default function ContactForm({ productName = null }) {
         </div>
       )}
 
-      <Button type="submit">
+      <Button
+        type="submit"
+        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
+      >
         <Send className="w-6 h-6 ml-2" />
         {productName ? "יאללה, אני רוצה להתחיל!" : "שליחת הודעה"}
       </Button>
 
       {success && (
-        <p className="text-green-600 font-semibold mt-4">
-          תודה! הטופס נשלח בהצלחה, אחזור אליך בהקדם.
+        <p className="text-green-600 font-semibold text-center mt-4">
+          הטופס נשלח בהצלחה! אחזור אליך בהקדם ✨
         </p>
       )}
     </form>
