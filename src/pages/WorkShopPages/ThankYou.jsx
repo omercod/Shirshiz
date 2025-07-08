@@ -79,7 +79,7 @@ export default function ThankYou() {
         <div className="absolute top-20 left-20 w-32 h-32 bg-beige-300 rounded-full opacity-30"></div>
         <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-brand-pink-200 rounded-full opacity-15 translate-y-32"></div>
 
-        <div className="relative py-20">
+        <div className="relative pb-20 pt-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Success Icon */}
             <AnimateOnScroll animation="zoom-in" className="text-center mb-8">
