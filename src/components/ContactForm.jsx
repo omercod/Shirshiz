@@ -117,18 +117,23 @@ export default function ContactForm({ productName = null }) {
         />
       </div>
 
-      <div>
-        <Label htmlFor="home-message">הודעה *</Label>
-        <Textarea
-          id="home-message"
-          name="message"
-          required
-          rows={4}
-          value={formData.message}
-          onChange={handleInputChange}
-          readOnly={!!productName} // לא ניתן לשנות בסדנא
-        />
-      </div>
+      {!productName && (
+        <div>
+          <Label htmlFor="home-message">הודעה *</Label>
+          <Textarea
+            id="home-message"
+            name="message"
+            required
+            rows={4}
+            value={formData.message}
+            onChange={handleInputChange}
+          />
+        </div>
+      )}
+      {/* בסדנאות - לא מציג את השדה אבל עדיין שולח אותו כסמוי */}
+      {productName && (
+        <input type="hidden" name="message" value={formData.message} />
+      )}
 
       <Button
         type="submit"
