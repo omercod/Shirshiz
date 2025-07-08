@@ -428,7 +428,7 @@ export default function VintageCakeWorkshop() {
                   בסדנה הקרובה ותגלי כמה קל זה להכין עוגה שתרשים את כולם.
                 </p>
                 <div className="max-w-lg mx-auto">
-                  <ContactForm productName="סדנת עוגות וינטג'" />
+                  <ContactForm productName="סדנת עוגות וינטג" />
                 </div>
               </div>
             </Card>
