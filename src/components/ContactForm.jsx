@@ -70,10 +70,10 @@ export default function ContactForm({ productName = null }) {
         type="hidden"
         name="subject"
         value={
-          productName === "קורס מאפס למקצוענית"
-            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-            : productName === "סדנת עוגות וינטג'"
-              ? `${formData.name} רוצה להירשם לסדנת עוגות וינטאג'`
+          productName?.includes("וינט")
+            ? `${formData.name} רוצה להירשם לסדנת עוגות וינטאג'`
+            : productName?.includes("קורס")
+              ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
               : `${formData.name} השאיר/ה לך פניה`
         }
       />
