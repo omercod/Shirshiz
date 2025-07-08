@@ -46,9 +46,9 @@ export default function ContactForm({ productName = null }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // שולחים ישירות בלי append נוסף כדי לא לייצר subject כפול
     const form = e.target;
     const data = new FormData(form);
-    data.append("subject", subject); // וידוא subject נכנס לפורם
 
     fetch("/", {
       method: "POST",
@@ -78,6 +78,9 @@ export default function ContactForm({ productName = null }) {
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="subject" value={subject} />
       <input type="hidden" name="bot-field" />
+      {productName && (
+        <input type="hidden" name="message" value={formData.message} />
+      )}
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -129,10 +132,6 @@ export default function ContactForm({ productName = null }) {
             onChange={handleInputChange}
           />
         </div>
-      )}
-      {/* בסדנאות - לא מציג את השדה אבל עדיין שולח אותו כסמוי */}
-      {productName && (
-        <input type="hidden" name="message" value={formData.message} />
       )}
 
       <Button
