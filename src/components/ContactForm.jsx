@@ -22,12 +22,11 @@ export default function ContactForm({ productName = null }) {
       : "",
   });
 
-  const formName =
-    productName === "סדנת עוגות וינטאג'"
-      ? "VintageWorkshop"
-      : productName === "קורס מאפס למקצוענית"
-        ? "ProWorkshop"
-        : "ContactHome";
+  const formName = productName?.includes("וינט")
+    ? "VintageWorkshop"
+    : productName?.includes("קורס")
+      ? "ProWorkshop"
+      : "ContactHome";
 
   const handleInputChange = (e) => {
     setFormData({
