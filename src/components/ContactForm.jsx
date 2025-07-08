@@ -18,6 +18,13 @@ export default function ContactForm({ productName = null }) {
     message: productName ? `אני רוצה להירשם ל${productName}` : "",
   });
 
+  const formName =
+    productName === "סדנת עוגת וינטאג'"
+      ? "VintageWorkshop"
+      : productName === "קורס מאפס למקצוענית"
+        ? "ProWorkshop"
+        : "ContactHome";
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -25,20 +32,18 @@ export default function ContactForm({ productName = null }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("תודה על פנייתך! אחזור אליך בהקדם האפשרי.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: productName ? `אני רוצה להירשם ל${productName}` : "",
-    });
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      name={formName}
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      className="space-y-6"
+    >
+      {/* שדות חובה ל-Netlify */}
+      <input type="hidden" name="form-name" value={formName} />
+      <input type="hidden" name="bot-field" />
+
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <Label
@@ -63,12 +68,13 @@ export default function ContactForm({ productName = null }) {
             htmlFor="home-phone"
             className="text-sm font-medium text-gray-700 mb-2 block"
           >
-            טלפון
+            טלפון *
           </Label>
           <Input
             id="home-phone"
             name="phone"
             type="tel"
+            required
             value={formData.phone}
             onChange={handleInputChange}
             className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500"
@@ -76,6 +82,7 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       </div>
+
       <div>
         <Label
           htmlFor="home-email"
@@ -95,7 +102,7 @@ export default function ContactForm({ productName = null }) {
           placeholder="your@email.com"
         />
       </div>
-      {/* שדה ההודעה יופיע רק אם זה לא טופס של מוצר ספציפי */}
+
       {!productName && (
         <div>
           <Label
@@ -116,6 +123,7 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       )}
+
       <Button
         type="submit"
         className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"

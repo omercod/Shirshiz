@@ -8,7 +8,6 @@ import {
   RefreshCw,
   X,
   Keyboard,
-  EyeOff,
   Type,
   Heading1,
 } from "lucide-react";
@@ -17,6 +16,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import "../../public/assets/css/accessibility.css";
 
 const AccessibilityMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,12 +128,6 @@ const AccessibilityMenu = () => {
       action: () => toggleSetting("keyboardNav"),
     },
     {
-      id: "disableAnimations",
-      label: "ביטול אנימציות",
-      icon: EyeOff,
-      action: () => toggleSetting("disableAnimations"),
-    },
-    {
       id: "contrast",
       label: "ניגודיות כהה",
       icon: Contrast,
@@ -163,7 +157,7 @@ const AccessibilityMenu = () => {
     <>
       <Button
         size="icon"
-        className="fixed bottom-5 mb-16 left-4 z-[100] rounded-full h-16 w-16 shadow-lg bg-brand-pink-500 hover:bg-brand-pink-600"
+        className="fixed bottom-5 mb-16 left-4 z-[100] rounded-full h-12 w-12 shadow-lg bg-brand-pink-500 hover:bg-brand-pink-600"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="פתח תפריט נגישות"
       >
@@ -171,7 +165,7 @@ const AccessibilityMenu = () => {
       </Button>
 
       {isOpen && (
-        <div dir="rtl" className="fixed bottom-24 left-5 z-[100] w-80">
+        <div dir="rtl" className="fixed bottom-24 left-10 z-[100] w-80">
           <Card className="shadow-2xl border-gray-300">
             <CardHeader className="bg-brand-pink-500 text-white p-4 flex flex-row items-center justify-between rounded-t-lg">
               <CardTitle className="text-lg flex items-center gap-2">
@@ -228,15 +222,26 @@ const AccessibilityMenu = () => {
                       {opt.label}
                     </span>
                   </Label>
-                  <Switch
-                    id={opt.id}
-                    checked={
-                      opt.id === "contrast"
-                        ? settings.contrast === "dark-mode"
-                        : settings[opt.id]
-                    }
-                    onCheckedChange={opt.action}
-                  />
+                  <div dir="ltr">
+                    <Switch
+                      id={opt.id}
+                      checked={
+                        opt.id === "contrast"
+                          ? settings.contrast === "dark-mode"
+                          : settings[opt.id]
+                      }
+                      onCheckedChange={opt.action}
+                      className={`transition-transform duration-200 ${
+                        (
+                          opt.id === "contrast"
+                            ? settings.contrast === "dark-mode"
+                            : settings[opt.id]
+                        )
+                          ? "scale-110 border-2 border-brand-pink-500"
+                          : ""
+                      }`}
+                    />
+                  </div>
                 </div>
               ))}
 

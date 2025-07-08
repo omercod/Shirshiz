@@ -1,0 +1,102 @@
+/* Accessibility Styles */
+html {
+  transition: font-size 0.2s ease-in-out;
+}
+
+body.acc-dark-mode {
+  background-color: #1a1a1a !important;
+  color: #f5f5f5 !important;
+}
+
+/* רקע של כרטיסים, כותרות, accordions, וגם גרדיאנטים */
+body.acc-dark-mode .bg-white,
+body.acc-dark-mode .bg-brand-pink-50,
+body.acc-dark-mode .bg-beige-50,
+body.acc-dark-mode .bg-gradient-to-br,
+body.acc-dark-mode .bg-gradient-to-bl,
+body.acc-dark-mode .bg-gradient-to-tr,
+body.acc-dark-mode .bg-gradient-to-l,
+body.acc-dark-mode header,
+body.acc-dark-mode footer,
+body.acc-dark-mode .card,
+body.acc-dark-mode .accordion-item {
+  background-color: #2a2a2a !important;
+  background-image: none !important;
+  color: #f5f5f5 !important;
+  border-color: #444 !important;
+}
+
+/* כל טקסט אפרפר */
+body.acc-dark-mode [class*="text-gray-"],
+body.acc-dark-mode [class*="text-slate-"] {
+  color: #e0e0e0 !important;
+}
+
+/* צבע טקסט ורוד מותאם לדארק */
+body.acc-dark-mode [class*="text-brand-pink-"] {
+  color: #f4c1be !important;
+}
+
+/* הדגשת קישורים בדארק */
+body.acc-dark-mode a {
+  color: #f5b0a9 !important;
+}
+
+/* תמונות בדארק */
+body.acc-dark-mode img {
+  filter: brightness(0.85) contrast(1.1);
+}
+
+/* כותרות מודגשות */
+body.acc-dark-mode h1,
+body.acc-dark-mode h2,
+body.acc-dark-mode h3,
+body.acc-dark-mode h4 {
+  color: #f8f8f8 !important;
+}
+
+body.acc-highlight-links a,
+body.acc-highlight-links button {
+  background-color: rgba(255, 255, 0, 0.5) !important;
+  color: #000000 !important;
+  padding: 2px 4px;
+  border-radius: 2px;
+  border: 1px solid #000 !important;
+}
+
+body.acc-keyboard-nav *:focus {
+  outline: 3px solid var(--brand-pink-600) !important;
+  outline-offset: 2px;
+}
+
+body.acc-no-animations *,
+body.acc-no-animations *::before,
+body.acc-no-animations *::after {
+  transition-duration: 0s !important;
+  animation: none !important;
+}
+
+body.acc-readable-font {
+  font-family: "Arial", sans-serif !important;
+}
+body.acc-readable-font h1,
+body.acc-readable-font h2,
+body.acc-readable-font h3,
+body.acc-readable-font h4,
+body.acc-readable-font h5,
+body.acc-readable-font h6,
+body.acc-readable-font .font-bold {
+  font-family: "Arial", sans-serif !important;
+  font-weight: bold;
+}
+
+body.acc-highlight-headlines h1,
+body.acc-highlight-headlines h2,
+body.acc-highlight-headlines h3,
+body.acc-highlight-headlines h4,
+body.acc-highlight-headlines h5,
+body.acc-highlight-headlines h6 {
+  background-color: rgba(255, 255, 0, 0.4) !important;
+  padding: 4px;
+  border-radius: 4px;
+}
