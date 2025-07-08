@@ -172,7 +172,7 @@ export default function ContactForm({ productName = null }) {
 
       {success && (
         <p className="text-green-600 font-semibold text-center mt-4">
-          הטופס נשלח בהצלחה! אחזור אליך בהקדם ✨
+          הטופס נשלח בהצלחה! אחזור אליך בהקדם ❤️
         </p>
       )}
     </form>
