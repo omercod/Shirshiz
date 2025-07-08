@@ -68,6 +68,17 @@ export default function ContactForm({ productName = null }) {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
+      <input
+        type="hidden"
+        name="subject"
+        value={
+          productName === "קורס מאפס למקצוענית"
+            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+            : productName === "סדנת עוגת וינטאג'"
+              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+              : `${formData.name} השאיר/ה לך פניה`
+        }
+      />
       <input type="hidden" name="bot-field" />
 
       <div className="grid sm:grid-cols-2 gap-4">

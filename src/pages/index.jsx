@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import VintageCakeWorkshop from "./WorkShopPages/VintageCakeWorkshop.jsx";
 import ProCourseWorkshop from "./WorkShopPages/ProCourseWorkshop.jsx";
 import RecipePage from "./RecipesPages/RecipePage.jsx";
+import ThankYou from "./WorkShopPages/ThankYou";
 
 import {
   BrowserRouter as Router,
@@ -59,6 +60,7 @@ function PagesContent() {
         <Route path="/recipes/:slug" element={<RecipePage />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route
           path="/vintage-cake-workshop"
           element={<VintageCakeWorkshop />}
