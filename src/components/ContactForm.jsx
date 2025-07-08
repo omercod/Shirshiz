@@ -23,7 +23,7 @@ export default function ContactForm({ productName = null }) {
   });
 
   const formName =
-    productName === "סדנת עוגת וינטאג'"
+    productName === "סדנת עוגות וינטאג'"
       ? "VintageWorkshop"
       : productName === "קורס מאפס למקצוענית"
         ? "ProWorkshop"
@@ -73,8 +73,8 @@ export default function ContactForm({ productName = null }) {
         value={
           productName === "קורס מאפס למקצוענית"
             ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-            : productName === "סדנת עוגת וינטאג'"
-              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+            : productName === "סדנת עוגות וינטג'"
+              ? `${formData.name} רוצה להירשם לסדנת עוגות וינטאג'`
               : `${formData.name} השאיר/ה לך פניה`
         }
       />
