@@ -12,6 +12,7 @@
     <!-- Hidden netlify forms for detection -->
     <div style="display: none">
       <form name="ContactHome" data-netlify="true">
+        <input type="hidden" name="subject" value="%{name} השאיר/ה לך פניה" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
@@ -19,6 +20,11 @@
       </form>
 
       <form name="VintageWorkshop" data-netlify="true">
+        <input
+          type="hidden"
+          name="subject"
+          value="%{name} רוצה להירשם לסדנת עוגת וינטאג'"
+        />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
@@ -26,6 +32,11 @@
       </form>
 
       <form name="ProWorkshop" data-netlify="true">
+        <input
+          type="hidden"
+          name="subject"
+          value="%{name} רוצה להירשם לקורס מאפס למקצוענית"
+        />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="phone" />
