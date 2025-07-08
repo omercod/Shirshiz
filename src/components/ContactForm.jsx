@@ -17,7 +17,6 @@ export default function ContactForm({ productName = null }) {
     phone: "",
     message: productName ? `אני רוצה להירשם ל${productName}` : "",
   });
-  const [success, setSuccess] = useState(false);
 
   const formName =
     productName === "סדנת עוגת וינטאג'"
@@ -33,82 +32,27 @@ export default function ContactForm({ productName = null }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const data = new FormData();
-    data.append("form-name", formName);
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("phone", formData.phone);
-    data.append("message", formData.message);
-
-    // Subject לפי סוג הטופס
-    if (formName === "ProWorkshop") {
-      data.append(
-        "subject",
-        `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-      );
-    } else if (formName === "VintageWorkshop") {
-      data.append("subject", `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`);
-    } else {
-      data.append("subject", `${formData.name} השאיר/ה לך פניה`);
-    }
-
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
-        setSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: productName ? `אני רוצה להירשם ל${productName}` : "",
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("אירעה שגיאה בשליחת הטופס. נסה/י שוב מאוחר יותר.");
-      });
-  };
-
   return (
     <form
       name={formName}
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
+      <input
+        type="hidden"
+        name="subject"
+        value={
+          productName === "קורס מאפס למקצוענית"
+            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+            : productName === "סדנת עוגת וינטאג'"
+              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+              : `${formData.name} השאיר/ה לך פניה`
+        }
+      />
       <input type="hidden" name="bot-field" />
-
-      {productName === "קורס מאפס למקצוענית" && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} רוצה להירשם לקורס מאפס למקצוענית`}
-        />
-      )}
-
-      {productName === "סדנת עוגת וינטאג'" && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`}
-        />
-      )}
-
-      {!productName && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} השאיר/ה לך פניה`}
-        />
-      )}
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
@@ -169,12 +113,6 @@ export default function ContactForm({ productName = null }) {
         <Send className="w-6 h-6 ml-2" />
         {productName ? "יאללה, אני רוצה להתחיל!" : "שליחת הודעה"}
       </Button>
-
-      {success && (
-        <p className="text-green-600 font-semibold text-center mt-4">
-          הטופס נשלח בהצלחה! אחזור אליך בהקדם ❤️
-        </p>
-      )}
     </form>
   );
 }
