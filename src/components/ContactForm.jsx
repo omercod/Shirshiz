@@ -29,13 +29,6 @@ export default function ContactForm({ productName = null }) {
         ? "ProWorkshop"
         : "ContactHome";
 
-  const subject =
-    productName === "קורס מאפס למקצוענית"
-      ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-      : productName === "סדנת עוגת וינטאג'"
-        ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
-        : `${formData.name} השאיר/ה לך פניה`;
-
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -76,12 +69,21 @@ export default function ContactForm({ productName = null }) {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
-      <input type="hidden" name="subject" value={subject} />
+      <input
+        type="hidden"
+        name="subject"
+        value={
+          productName === "קורס מאפס למקצוענית"
+            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+            : productName === "סדנת עוגת וינטאג'"
+              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+              : `${formData.name} השאיר/ה לך פניה`
+        }
+      />
       <input type="hidden" name="bot-field" />
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
-
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="home-name">שם מלא *</Label>
@@ -106,7 +108,6 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       </div>
-
       <div>
         <Label htmlFor="home-email">כתובת מייל *</Label>
         <Input
@@ -119,7 +120,6 @@ export default function ContactForm({ productName = null }) {
           dir="ltr"
         />
       </div>
-
       {!productName && (
         <div>
           <Label htmlFor="home-message">הודעה *</Label>
@@ -133,7 +133,6 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       )}
-
       <Button
         type="submit"
         className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
