@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,14 +11,11 @@ ContactForm.propTypes = {
 };
 
 export default function ContactForm({ productName = null }) {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: productName
-      ? `השארתי פרטים ואני רוצה להירשם ל${productName}, תחזרי אליי`
-      : "",
+    message: productName ? `אני רוצה להירשם ל${productName}` : "",
   });
 
   const formName =
@@ -36,36 +32,12 @@ export default function ContactForm({ productName = null }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // שולחים ישירות בלי append נוסף כדי לא לייצר subject כפול
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
-      .then(() => {
-        if (formName === "ProWorkshop") {
-          navigate("/thank-you?workshop=pro-course");
-        } else if (formName === "VintageWorkshop") {
-          navigate("/thank-you?workshop=vintage-cake");
-        } else {
-          navigate("/thank-you");
-        }
-      })
-      .catch(() => alert("אירעה שגיאה בשליחת הטופס. נסי שוב בעוד כמה דקות 🙏"));
-  };
-
   return (
     <form
       name={formName}
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
@@ -81,9 +53,11 @@ export default function ContactForm({ productName = null }) {
         }
       />
       <input type="hidden" name="bot-field" />
+
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
+
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="home-name">שם מלא *</Label>
@@ -108,6 +82,7 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       </div>
+
       <div>
         <Label htmlFor="home-email">כתובת מייל *</Label>
         <Input
@@ -120,6 +95,7 @@ export default function ContactForm({ productName = null }) {
           dir="ltr"
         />
       </div>
+
       {!productName && (
         <div>
           <Label htmlFor="home-message">הודעה *</Label>
@@ -133,6 +109,7 @@ export default function ContactForm({ productName = null }) {
           />
         </div>
       )}
+
       <Button
         type="submit"
         className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
