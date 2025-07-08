@@ -330,7 +330,7 @@ export default function ProCourseWorkshop() {
                   הוא הצעד הנכון עבורך. מספר המקומות מוגבל!
                 </p>
                 <div className="max-w-lg mx-auto">
-                  <ContactForm productName="קורס מאפס למקצוענות" />
+                  <ContactForm productName="קורס מאפס למקצוענית" />
                 </div>
               </div>
             </Card>
