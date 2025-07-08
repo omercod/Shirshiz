@@ -10,7 +10,7 @@ import Contact from "./Contact";
 import VintageCakeWorkshop from "./WorkShopPages/VintageCakeWorkshop.jsx";
 import ProCourseWorkshop from "./WorkShopPages/ProCourseWorkshop.jsx";
 import RecipePage from "./RecipesPages/RecipePage.jsx";
-import ThankYou from "./WorkShopPages/ThankYou";
+import ThankYou from "./WorkShopPages/ThankYou.jsx";
 
 import {
   BrowserRouter as Router,
