@@ -32,8 +32,7 @@ export default function ThankYou() {
             "נשלח לך רשימת הדברים שכדאי להביא (אם בכלל)",
             "נקבע שיחת ייעוץ קצרה לפני הקורס",
           ],
-          image:
-            "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6bd4a4177_IMG_9556-600x790.jpeg",
+          image: "/assets/images/home/yuval_bearCake.jpg",
         };
       case "vintage-cake":
         return {
@@ -47,8 +46,7 @@ export default function ThankYou() {
             "כל הציוד וחומרי הגלם מסופקים על ידי",
             "מוכנה לחוויה מתוקה ויצירתית!",
           ],
-          image:
-            "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3",
+          image: "/assets/images/home/witheBirthdayCake.jpg",
         };
       default:
         return {
@@ -62,8 +60,7 @@ export default function ThankYou() {
             "אם יש צורך, נקבע שיחת ייעוץ קצרה",
             "ובינתיים, את מוזמנת להמשיך ולהתרשם מהאתר ומהגלריה",
           ],
-          image:
-            "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.jpg",
+          image: "/assets/images/home/shirProflie.jpg",
         };
     }
   };
