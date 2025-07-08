@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +12,7 @@ ContactForm.propTypes = {
 };
 
 export default function ContactForm({ productName = null }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,22 +36,50 @@ export default function ContactForm({ productName = null }) {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        // ניווט לדף תודה עם פרמטר workshop
+        if (formName === "ProWorkshop") {
+          navigate("/thank-you?workshop=pro-course");
+        } else if (formName === "VintageWorkshop") {
+          navigate("/thank-you?workshop=vintage-cake");
+        } else {
+          navigate("/thank-you");
+        }
+      })
+      .catch(() => alert("אירעה שגיאה בשליחת הטופס. נסי שוב בעוד כמה דקות 🙏"));
+  };
+
   return (
     <form
       name={formName}
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      data-subject={
-        productName === "קורס מאפס למקצוענית"
-          ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-          : productName === "סדנת עוגת וינטאג'"
-            ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
-            : `${formData.name} השאיר/ה לך פניה`
-      }
+      onSubmit={handleSubmit}
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
+      <input
+        type="hidden"
+        name="subject"
+        value={
+          productName === "קורס מאפס למקצוענית"
+            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+            : productName === "סדנת עוגת וינטאג'"
+              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+              : `${formData.name} השאיר/ה לך פניה`
+        }
+      />
       <input type="hidden" name="bot-field" />
 
       <div className="grid sm:grid-cols-2 gap-4">
@@ -90,13 +120,7 @@ export default function ContactForm({ productName = null }) {
         />
       </div>
 
-      {productName ? (
-        <input
-          type="hidden"
-          name="message"
-          value={`השארתי פרטים ואני רוצה להירשם ל${productName}, תחזרי אליי`}
-        />
-      ) : (
+      {!productName && (
         <div>
           <Label htmlFor="home-message">הודעה *</Label>
           <Textarea
