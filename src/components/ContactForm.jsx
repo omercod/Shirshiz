@@ -17,6 +17,7 @@ export default function ContactForm({ productName = null }) {
     phone: "",
     message: productName ? `אני רוצה להירשם ל${productName}` : "",
   });
+  const [success, setSuccess] = useState(false);
 
   const formName =
     productName === "סדנת עוגת וינטאג'"
@@ -32,50 +33,52 @@ export default function ContactForm({ productName = null }) {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // בונה את ה-FormData לשליחה
+    const data = new FormData();
+    data.append("form-name", formName);
+    data.append("name", formData.name);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("message", formData.message);
+
+    // שולח ל-Netlify
+    fetch("/", {
+      method: "POST",
+      body: data,
+    })
+      .then(() => {
+        setSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: productName ? `אני רוצה להירשם ל${productName}` : "",
+        });
+      })
+      .catch((error) => {
+        alert("שגיאה בשליחת הטופס. נסה שוב מאוחר יותר.");
+        console.error(error);
+      });
+  };
+
   return (
     <form
       name={formName}
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
       className="space-y-6"
     >
-      {/* שדות חובה ל-Netlify */}
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="bot-field" />
 
-      {productName === "קורס מאפס למקצוענית" && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} רוצה להירשם לקורס מאפס למקצוענית`}
-        />
-      )}
-
-      {productName === "סדנת עוגת וינטאג'" && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`}
-        />
-      )}
-
-      {!productName && (
-        <input
-          type="hidden"
-          name="subject"
-          value={`${formData.name} השאיר/ה לך פניה`}
-        />
-      )}
-
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <Label
-            htmlFor="home-name"
-            className="text-sm font-medium text-gray-700 mb-2 block"
-          >
-            שם מלא *
-          </Label>
+          <Label htmlFor="home-name">שם מלא *</Label>
           <Input
             id="home-name"
             name="name"
@@ -83,17 +86,10 @@ export default function ContactForm({ productName = null }) {
             required
             value={formData.name}
             onChange={handleInputChange}
-            className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500"
-            placeholder="השם שלך"
           />
         </div>
         <div>
-          <Label
-            htmlFor="home-phone"
-            className="text-sm font-medium text-gray-700 mb-2 block"
-          >
-            טלפון *
-          </Label>
+          <Label htmlFor="home-phone">טלפון *</Label>
           <Input
             id="home-phone"
             name="phone"
@@ -101,19 +97,12 @@ export default function ContactForm({ productName = null }) {
             required
             value={formData.phone}
             onChange={handleInputChange}
-            className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500"
-            placeholder="054-123-4567"
           />
         </div>
       </div>
 
       <div>
-        <Label
-          htmlFor="home-email"
-          className="text-sm font-medium text-gray-700 mb-2 block"
-        >
-          כתובת מייל *
-        </Label>
+        <Label htmlFor="home-email">כתובת מייל *</Label>
         <Input
           id="home-email"
           name="email"
@@ -122,19 +111,12 @@ export default function ContactForm({ productName = null }) {
           value={formData.email}
           onChange={handleInputChange}
           dir="ltr"
-          className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500"
-          placeholder="your@email.com"
         />
       </div>
 
       {!productName && (
         <div>
-          <Label
-            htmlFor="home-message"
-            className="text-sm font-medium text-gray-700 mb-2 block"
-          >
-            הודעה *
-          </Label>
+          <Label htmlFor="home-message">הודעה *</Label>
           <Textarea
             id="home-message"
             name="message"
@@ -142,19 +124,20 @@ export default function ContactForm({ productName = null }) {
             rows={4}
             value={formData.message}
             onChange={handleInputChange}
-            className="rounded-lg border-gray-300 focus:border-brand-pink-500 focus:ring-brand-pink-500 resize-none"
-            placeholder="ספרי לי בקצרה מה תרצי לדעת..."
           />
         </div>
       )}
 
-      <Button
-        type="submit"
-        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
-      >
+      <Button type="submit">
         <Send className="w-6 h-6 ml-2" />
         {productName ? "יאללה, אני רוצה להתחיל!" : "שליחת הודעה"}
       </Button>
+
+      {success && (
+        <p className="text-green-600 font-semibold mt-4">
+          תודה! הטופס נשלח בהצלחה, אחזור אליך בהקדם.
+        </p>
+      )}
     </form>
   );
 }
