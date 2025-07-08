@@ -47,7 +47,6 @@ export default function ContactForm({ productName = null }) {
       body: data,
     })
       .then(() => {
-        // ניווט לדף תודה עם פרמטר workshop
         if (formName === "ProWorkshop") {
           navigate("/thank-you?workshop=pro-course");
         } else if (formName === "VintageWorkshop") {
@@ -69,17 +68,6 @@ export default function ContactForm({ productName = null }) {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
-      <input
-        type="hidden"
-        name="subject"
-        value={
-          productName === "קורס מאפס למקצוענית"
-            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-            : productName === "סדנת עוגת וינטאג'"
-              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
-              : `${formData.name} השאיר/ה לך פניה`
-        }
-      />
       <input type="hidden" name="bot-field" />
 
       <div className="grid sm:grid-cols-2 gap-4">
@@ -120,19 +108,18 @@ export default function ContactForm({ productName = null }) {
         />
       </div>
 
-      {!productName && (
-        <div>
-          <Label htmlFor="home-message">הודעה *</Label>
-          <Textarea
-            id="home-message"
-            name="message"
-            required
-            rows={4}
-            value={formData.message}
-            onChange={handleInputChange}
-          />
-        </div>
-      )}
+      <div>
+        <Label htmlFor="home-message">הודעה *</Label>
+        <Textarea
+          id="home-message"
+          name="message"
+          required
+          rows={4}
+          value={formData.message}
+          onChange={handleInputChange}
+          readOnly={!!productName} // לא מאפשר לשנות אם זה סדנא
+        />
+      </div>
 
       <Button
         type="submit"
