@@ -28,6 +28,7 @@ const PAGES = {
   Contact: Contact,
   VintageCakeWorkshop: VintageCakeWorkshop,
   ProCourseWorkshop: ProCourseWorkshop,
+  ThankYou: ThankYou,
 };
 
 function _getCurrentPage(url) {

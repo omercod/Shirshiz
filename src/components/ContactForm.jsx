@@ -29,6 +29,13 @@ export default function ContactForm({ productName = null }) {
         ? "ProWorkshop"
         : "ContactHome";
 
+  const subject =
+    productName === "קורס מאפס למקצוענית"
+      ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+      : productName === "סדנת עוגת וינטאג'"
+        ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
+        : `${formData.name} השאיר/ה לך פניה`;
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -41,6 +48,7 @@ export default function ContactForm({ productName = null }) {
 
     const form = e.target;
     const data = new FormData(form);
+    data.append("subject", subject); // וידוא subject נכנס לפורם
 
     fetch("/", {
       method: "POST",
@@ -68,17 +76,7 @@ export default function ContactForm({ productName = null }) {
       className="space-y-6"
     >
       <input type="hidden" name="form-name" value={formName} />
-      <input
-        type="hidden"
-        name="subject"
-        value={
-          productName === "קורס מאפס למקצוענית"
-            ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-            : productName === "סדנת עוגת וינטאג'"
-              ? `${formData.name} רוצה להירשם לסדנת עוגת וינטאג'`
-              : `${formData.name} השאיר/ה לך פניה`
-        }
-      />
+      <input type="hidden" name="subject" value={subject} />
       <input type="hidden" name="bot-field" />
 
       <div className="grid sm:grid-cols-2 gap-4">
@@ -128,7 +126,7 @@ export default function ContactForm({ productName = null }) {
           rows={4}
           value={formData.message}
           onChange={handleInputChange}
-          readOnly={!!productName} // לא מאפשר לשנות אם זה סדנא
+          readOnly={!!productName} // לא ניתן לשנות בסדנא
         />
       </div>
 
