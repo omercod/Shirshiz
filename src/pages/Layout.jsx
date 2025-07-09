@@ -5,10 +5,13 @@ import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PropTypes from "prop-types";
 import AccessibilityMenu from "@/components/AccessibilityMenu";
+import { useNavigate } from "react-router-dom";
 
 export default function Layout({ children }) {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const navigate = useNavigate();
+
   Layout.propTypes = {
     children: PropTypes.node.isRequired,
   };
@@ -88,9 +91,16 @@ export default function Layout({ children }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link
-              to={createPageUrl("Home")}
-              className="flex items-center space-x-3 space-x-reverse"
+            <div
+              onClick={() => {
+                if (location.pathname === createPageUrl("Home")) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  navigate(createPageUrl("Home"));
+                }
+                setIsMenuOpen(false);
+              }}
+              className="flex items-center space-x-3 space-x-reverse cursor-pointer"
             >
               <img
                 src="/assets/images/home/shirProflie.jpg"
@@ -105,7 +115,7 @@ export default function Layout({ children }) {
                   By Shir Azaria
                 </span>
               </div>
-            </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8 space-x-reverse">

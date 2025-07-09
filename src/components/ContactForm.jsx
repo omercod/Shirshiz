@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 import PropTypes from "prop-types";
+import emailjs from "@emailjs/browser";
 
 ContactForm.propTypes = {
   productName: PropTypes.string,
@@ -37,13 +38,19 @@ export default function ContactForm({ productName = null }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      body: data,
-    })
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      productName: productName || "פנייה כללית",
+    };
+
+    const templateId = productName ? "template_69a6r4z" : "template_hpqii18";
+
+    emailjs
+      .send("service_7q2vymr", templateId, templateParams, "U9qOEVxDocEjehtfn")
       .then(() => {
         if (formName === "ProWorkshop") {
           navigate("/thank-you?workshop=pro-course");
@@ -57,15 +64,7 @@ export default function ContactForm({ productName = null }) {
   };
 
   return (
-    <form
-      name={formName}
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}
-      className="space-y-6"
-    >
-      <input type="hidden" name="form-name" value={formName} />
+    <form onSubmit={handleSubmit} className="space-y-6">
       <input
         type="hidden"
         name="subject"
@@ -77,8 +76,6 @@ export default function ContactForm({ productName = null }) {
               : `${formData.name} השאיר/ה לך פניה`
         }
       />
-      <input type="hidden" name="bot-field" />
-
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
