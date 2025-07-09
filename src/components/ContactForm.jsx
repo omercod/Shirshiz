@@ -39,10 +39,15 @@ export default function ContactForm({ productName = null }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const phoneInternational = formData.phone.startsWith("0")
+      ? "972" + formData.phone.slice(1)
+      : formData.phone;
+
     const templateParams = {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
+      phoneInternational,
       message: formData.message,
       productName: productName || "פנייה כללית",
     };
