@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +14,7 @@ ContactForm.propTypes = {
 
 export default function ContactForm({ productName = null }) {
   const navigate = useNavigate();
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,19 +44,27 @@ export default function ContactForm({ productName = null }) {
       ? "972" + formData.phone.slice(1)
       : formData.phone;
 
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      phoneInternational,
-      message: formData.message,
-      productName: productName || "פנייה כללית",
-    };
+    // נמלא את הinputים שלא קיימים בדף
+    if (!formRef.current.querySelector('[name="phoneInternational"]')) {
+      const hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.name = "phoneInternational";
+      hiddenInput.value = phoneInternational;
+      formRef.current.appendChild(hiddenInput);
+    } else {
+      formRef.current.querySelector('[name="phoneInternational"]').value =
+        phoneInternational;
+    }
 
     const templateId = productName ? "template_69a6r4z" : "template_hpqii18";
 
     emailjs
-      .send("service_7q2vymr", templateId, templateParams, "U9qOEVxDocEjehtfn")
+      .sendForm(
+        "service_7q2vymr",
+        templateId,
+        formRef.current,
+        "U9qOEVxDocEjehtfn"
+      )
       .then(() => {
         if (formName === "ProWorkshop") {
           navigate("/thank-you?workshop=pro-course");
@@ -69,7 +78,7 @@ export default function ContactForm({ productName = null }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
       <input
         type="hidden"
         name="subject"
