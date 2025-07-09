@@ -74,7 +74,19 @@ export default function ContactForm({ productName = null }) {
               : `${formData.name} השאיר/ה לך פניה`
         }
       />
-      <input type="hidden" name="productName" value={productName || ""} />
+
+      {(productName?.includes("וינט") || productName?.includes("קורס")) && (
+        <input
+          type="hidden"
+          name="productName"
+          value={
+            productName?.includes("וינט")
+              ? "סדנת עוגות וינטאג'"
+              : "קורס מאפס למקצוענית"
+          }
+        />
+      )}
+
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
