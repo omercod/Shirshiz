@@ -40,22 +40,6 @@ export default function ContactForm({ productName = null }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const phoneInternational = formData.phone.startsWith("0")
-      ? "972" + formData.phone.slice(1)
-      : formData.phone;
-
-    // נמלא את הinputים שלא קיימים בדף
-    if (!formRef.current.querySelector('[name="phoneInternational"]')) {
-      const hiddenInput = document.createElement("input");
-      hiddenInput.type = "hidden";
-      hiddenInput.name = "phoneInternational";
-      hiddenInput.value = phoneInternational;
-      formRef.current.appendChild(hiddenInput);
-    } else {
-      formRef.current.querySelector('[name="phoneInternational"]').value =
-        phoneInternational;
-    }
-
     const templateId = productName ? "template_69a6r4z" : "template_hpqii18";
 
     emailjs
@@ -93,6 +77,16 @@ export default function ContactForm({ productName = null }) {
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
+
+      <input
+        type="hidden"
+        name="phoneInternational"
+        value={
+          formData.phone.startsWith("0")
+            ? "972" + formData.phone.slice(1)
+            : formData.phone
+        }
+      />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
