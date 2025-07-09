@@ -74,6 +74,7 @@ export default function ContactForm({ productName = null }) {
               : `${formData.name} השאיר/ה לך פניה`
         }
       />
+      <input type="hidden" name="productName" value={productName || ""} />
       {productName && (
         <input type="hidden" name="message" value={formData.message} />
       )}
