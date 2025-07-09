@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,6 @@ ContactForm.propTypes = {
 
 export default function ContactForm({ productName = null }) {
   const navigate = useNavigate();
-  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,15 +39,39 @@ export default function ContactForm({ productName = null }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // חישוב ערכים נוספים
+    const phoneInternational = formData.phone.startsWith("0")
+      ? "972" + formData.phone.slice(1)
+      : formData.phone;
+
+    const resolvedProductName = productName?.includes("וינט")
+      ? "סדנת עוגות וינטאג'"
+      : productName?.includes("קורס")
+        ? "קורס מאפס למקצוענית"
+        : "";
+
+    const subject = productName?.includes("וינט")
+      ? `${formData.name} רוצה להירשם לסדנת עוגות וינטאג'`
+      : productName?.includes("קורס")
+        ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
+        : `${formData.name} השאיר/ה לך פניה`;
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      phoneInternational,
+      productName: resolvedProductName,
+      message: formData.message,
+      subject,
+    };
+
+    console.log("🚀 נתוני שליחה בפועל:", templateParams);
+
     const templateId = productName ? "template_69a6r4z" : "template_hpqii18";
 
     emailjs
-      .sendForm(
-        "service_7q2vymr",
-        templateId,
-        formRef.current,
-        "U9qOEVxDocEjehtfn"
-      )
+      .send("service_7q2vymr", templateId, templateParams, "U9qOEVxDocEjehtfn")
       .then(() => {
         if (formName === "ProWorkshop") {
           navigate("/thank-you?workshop=pro-course");
@@ -62,44 +85,7 @@ export default function ContactForm({ productName = null }) {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-      <input
-        type="hidden"
-        name="subject"
-        value={
-          productName?.includes("וינט")
-            ? `${formData.name} רוצה להירשם לסדנת עוגות וינטאג'`
-            : productName?.includes("קורס")
-              ? `${formData.name} רוצה להירשם לקורס מאפס למקצוענית`
-              : `${formData.name} השאיר/ה לך פניה`
-        }
-      />
-
-      <input
-        type="hidden"
-        name="productName"
-        value={
-          productName?.includes("וינט")
-            ? "סדנת עוגות וינטאג'"
-            : productName?.includes("קורס")
-              ? "קורס מאפס למקצוענית"
-              : ""
-        }
-      />
-      {productName && (
-        <input type="hidden" name="message" value={formData.message} />
-      )}
-
-      <input
-        type="hidden"
-        name="phoneInternational"
-        value={
-          formData.phone.startsWith("0")
-            ? "972" + formData.phone.slice(1)
-            : formData.phone
-        }
-      />
-
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="home-name">שם מלא *</Label>
