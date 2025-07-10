@@ -50,7 +50,7 @@ export default function ThankYou() {
     } else {
       return {
         title: "תודה שפנית אליי!",
-        subtitle: "שמחתי לקבל את הפנייה שלך",
+        subtitle: "כיף לקבל ממך הודעה",
         description:
           "אני מאוד מעריכה את הזמן שהקדשת כדי ליצור איתי קשר. אני מבטיחה לקרוא בעיון את ההודעה שלך ולחזור אלייך בהקדם האפשרי.",
         image: "/assets/images/home/shirProflie.jpg",

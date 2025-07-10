@@ -401,7 +401,6 @@ export default function RecipePage() {
                   <Printer className="w-5 h-5 ml-2" /> הדפסת מתכון
                 </Button>
               )}
-
               <div className="relative">
                 <Button
                   size="lg"
