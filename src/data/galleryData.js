@@ -12,12 +12,12 @@ export const galleryImages = [
   {
     src: "/assets/images/home/HeartCake.jpg",
     alt: "עוגת לב",
-    categories: ["בת מצווה"],
+    categories: ["יום הולדת", "וינטאג'", "בת מצווה"],
   },
   {
     src: "/assets/images/home/Bar_miitzva.jpg",
     alt: "עוגת תפילין",
-    categories: ["בר מצווה"],
+    categories: ["יום הולדת", "בר מצווה"],
   },
   {
     src: "/assets/images/home/yuval_bearCake.jpg",
@@ -233,5 +233,15 @@ export const galleryImages = [
     src: "/assets/images/gallery/engage_shenhav.jpg",
     alt: "עוגת טבעת למסיבת רווקות",
     categories: ["מיוחדים"],
+  },
+  {
+    src: "/assets/images/gallery/blueHeart.jpg",
+    alt: "עוגת לבבות תכלת",
+    categories: ["יום הולדת"],
+  },
+  {
+    src: "/assets/images/gallery/bordoVin.jpg",
+    alt: "עוגת וינטג' בורדו",
+    categories: ["וינטאג'", "יום הולדת"],
   },
 ];

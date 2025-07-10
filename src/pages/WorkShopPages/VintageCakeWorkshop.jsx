@@ -23,12 +23,15 @@ import {
   X,
   Cake,
   BookOpenText,
+  FileText,
+  ZoomInIcon,
 } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
 
 export default function VintageCakeWorkshop() {
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const scrollToContact = () => {
     document
@@ -38,16 +41,18 @@ export default function VintageCakeWorkshop() {
 
   const features = {
     theory: [
-      "דגשים לאפייה נכונה של עוגה יציבה, אוורירית וטעימה",
-      "פריסת עוגות מקצועית ומדויקת",
-      "הכנת קרם חמאה שוויצרי מהיסוד (עם טיפים למניעת תקלות)",
-      "הכנת מילויים טעימים לעוגה",
+      "דגשים לאפיית העוגה בצורה נכונה כדי שתהיה יציבה, אוורירית וטעימה",
+      "פריסת העוגה בצורה מדויקת",
+      "הכנת קרם חמאה שוויצרי מהיסוד, כולל למידת התרחישים שעלולים לקרות בדרך",
+      "הכנת מילויים לעוגה",
+      "בניית עוגה קוטר 16 בצורה ישרה ויציבה",
     ],
     practical: [
-      "בנייה נכונה של עוגה בקוטר 16",
       "עיטוף העוגה בצורה חלקה ומקצועית",
+      "סוגי זילוף: עבודה עם צנתרים שונים",
       "טכניקות זילוף וינטג' עם מגוון צנתרים",
-      "צביעת הקרם בצבעים מרהיבים",
+      "צביעת הקרם חמאה",
+      "קישוט העוגה",
     ],
   };
 
@@ -64,26 +69,29 @@ export default function VintageCakeWorkshop() {
         "תקבלו את כל הכלים והביטחון להמשיך ליצור עוגות כאלה גם בבית.",
     },
     {
+      icon: FileText,
+      title: "חוברת מתכונים והסברים",
+      description: "חוברת שתקבלי מתחילת הסדנה, עם כל הדגשים והשלבים מהקורס",
+    },
+    {
       icon: Camera,
-      title: "חוברת מתכונים ובונוס צילום",
-      description: "חוברת מתכונים דיגיטלית וטיפים לצילום נכון של העוגות שלכן.",
+      title: "שיעור צילום ",
+      description: "נלמד איך נכון לצלם את העוגה, מבחינת תאורה וזוויות",
     },
   ];
 
   const testimonials = [
     {
-      name: "נועה כהן",
-      text: "הסדנה של שיר הייתה חוויה מדהימה! יצאתי עם עוגה הורסת ועם המון ביטחון. שיר מסבירה הכל בסבלנות ובמקצועיות. ממליצה בחום!",
+      name: "תמר",
+      text: "הייתי בסדנה של שיר המהממת, בהתחלה כזה היה יותר קשה ולא היה לי ביטחון אבל עכשיו אני עם ביטחון עצום וזה כזה מזה כיף ויותר קל עכשיו, באמת שכדאי לכם, ממליצה מאוד!",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/assets/images/home/tamar_review.jpg",
     },
     {
-      name: "יעל לוי",
-      text: "לא האמנתי שאצליח להכין עוגה כזאת יפה. הכל בזכות ההדרכה המדויקת של שיר. היה יום כיף, מלא יצירה וטעם. שווה כל רגע.",
+      name: "דאנה ארובס",
+      text: "הייתה סדנה מושלמת!!!!!! והעוגה יצאה כל כך יפה וטעימה ובאה בול בשביל להרשים את כל המשפחה אחרי ארוחת שישי 🥰🥰🥰🥰🥰",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1587668178277-295251f900ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/assets/images/home/dana_review.jpg",
     },
   ];
 
@@ -94,7 +102,7 @@ export default function VintageCakeWorkshop() {
     },
     {
       q: "מה גודל הקבוצה?",
-      a: "הסדנאות מתקיימות בקבוצות קטנות ואינטימיות של עד 3 משתתפות, כדי להבטיח יחס אישי ומענה לכל אחת.",
+      a: "הסדנאות מתקיימות בקבוצות קטנות ואינטימיות של עד 2 משתתפות, כדי להבטיח יחס אישי ומענה לכל אחת.",
     },
     {
       q: "כמה זמן אורכת הסדנה?",
@@ -124,11 +132,10 @@ export default function VintageCakeWorkshop() {
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
-            גלי את סודות עוגות הוינטג&apos;
+            סדנת עוגות וינטג&apos;
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-[0_2px_2px_rgba(0,0,0,0.7)]">
-            בסדנה חווייתית אחת, תלמדי את כל הטכניקות ליצירת עוגות מרשימות
-            וטעימות בקרם חמאה שוויצרי.
+            כל הסודות ליצירת עוגות מרשימות בקרם חמאה שוויצרי
           </p>
           <Button
             size="lg"
@@ -150,8 +157,8 @@ export default function VintageCakeWorkshop() {
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 בסדנת הוינטג&apos; שלי תקבלי את כל הכלים, הביטחון והידע כדי
-                להפוך את החלום למציאות. אני מזמינה אותך ליום של יצירה, למידה,
-                והמון כיף, באווירה ביתית ועם יחס אישי.
+                להפוך את החלום למציאות. ביום אחד בלבד תלמדי ליצור, לעצב ולהתאהב
+                בעולם העוגות, באווירה נעימה ועם ליווי צמוד שיוציא ממך את המיטב.
               </p>
               <div className="flex flex-wrap gap-4 text-center">
                 <div className="flex-1 space-y-1 bg-brand-pink-50 p-3 rounded-lg">
@@ -160,7 +167,7 @@ export default function VintageCakeWorkshop() {
                 </div>
                 <div className="flex-1 space-y-1 bg-brand-pink-50 p-3 rounded-lg">
                   <Users className="w-6 h-6 text-brand-pink-500 mx-auto" />
-                  <p className="font-semibold text-gray-900">עד 3 משתתפות</p>
+                  <p className="font-semibold text-gray-900">עד 2 משתתפות</p>
                 </div>
                 <div className="flex-1 space-y-1 bg-brand-pink-50 p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-brand-pink-500 mx-auto" />
@@ -198,18 +205,18 @@ export default function VintageCakeWorkshop() {
           <AnimateOnScroll animation="slide-up" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
               <Sparkles className="w-20 h-20 md:w-12 md:h-12 text-brand-pink-500" />
-              הקסם קורה כאן: מה נלמד בסדנה?
+              מה מחכה לך בסדנה?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              הסדנה מחולקת לחלק עיוני ומעשי, כדי שתקבלו את כל הידע והביטחון
-              ליצור בעצמכן.
+              הסדנה משלבת חלק עיוני ומעשי, כדי שתצאי עם כל הידע, הביטחון והכלים
+              להתחיל ליצור עוגות מרשימות בעצמך.
             </p>
           </AnimateOnScroll>
           <div className="grid md:grid-cols-2 gap-8">
             <AnimateOnScroll animation="slide-up">
               <Card className="h-full border-0 shadow-lg p-6">
                 <CardTitle className="mb-4 text-2xl font-bold text-brand-pink-600">
-                  יסודות ותיאוריה
+                  חלק עיוני
                 </CardTitle>
                 <ul className="space-y-3">
                   {features.theory.map((feature, i) => (
@@ -224,7 +231,7 @@ export default function VintageCakeWorkshop() {
             <AnimateOnScroll animation="slide-up" delay={0.1}>
               <Card className="h-full border-0 shadow-lg p-6">
                 <CardTitle className="mb-4 text-2xl font-bold text-brand-pink-600">
-                  ידיים על העוגה
+                  חלק מעשי
                 </CardTitle>
                 <ul className="space-y-3">
                   {features.practical.map((feature, i) => (
@@ -248,56 +255,63 @@ export default function VintageCakeWorkshop() {
           </h2>
         </AnimateOnScroll>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto px-4">
-          <AnimateOnScroll
-            animation="zoom-in"
-            className="aspect-w-1 aspect-h-1"
-          >
-            <img
-              src="/assets/images/home/tamar_review.jpg"
-              className="object-cover w-full h-full rounded-xl shadow-lg hover-lift"
-            />
-          </AnimateOnScroll>
-          <AnimateOnScroll
-            animation="zoom-in"
-            delay={0.1}
-            className="aspect-w-1 aspect-h-1"
-          >
-            <img
-              src="/assets/images/home/dana_review.jpg"
-              className="object-cover w-full h-full rounded-xl shadow-lg hover-lift"
-            />
-          </AnimateOnScroll>
-          <AnimateOnScroll
-            animation="zoom-in"
-            delay={0.2}
-            className="aspect-w-1 aspect-h-1"
-          >
-            <img
-              src="/assets/images/home/yuval_bearCake.jpg"
-              className="object-cover w-full h-full rounded-xl shadow-lg hover-lift"
-            />
-          </AnimateOnScroll>
-          <AnimateOnScroll
-            animation="zoom-in"
-            delay={0.3}
-            className="aspect-w-1 aspect-h-1"
-          >
-            <img
-              src="/assets/images/home/witheBirthdayCake.jpg"
-              className="object-cover w-full h-full rounded-xl shadow-lg hover-lift"
-            />
-          </AnimateOnScroll>
+          {[
+            "/assets/images/home/tamar_review.jpg",
+            "/assets/images/workShops/vinWorkShop.jpg",
+            "/assets/images/workShops/vinwork1.jpg",
+            "/assets/images/workShops/vinwork2.jpg",
+          ].map((img, idx) => (
+            <AnimateOnScroll
+              key={idx}
+              animation="zoom-in"
+              delay={idx * 0.1}
+              className="relative rounded-xl shadow-lg overflow-hidden group hover-lift"
+            >
+              <img
+                src={img}
+                className="object-cover w-full h-36 sm:h-48 md:h-56 transition-transform duration-300 group-hover:scale-105"
+                alt=""
+              />
+              <div
+                className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
+                onClick={() => setSelectedImage(img)}
+              >
+                <ZoomInIcon className="w-10 h-10 text-white" />
+              </div>
+            </AnimateOnScroll>
+          ))}
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            className="
+            max-h-[50vh] 
+            max-w-sm 
+            mx-4 my-8 
+            rounded-xl shadow-xl
+            sm:max-h-[60vh] sm:max-w-md
+            md:max-h-[80vh] md:max-w-3xl
+          "
+            alt=""
+          />
+        </div>
+      )}
 
       {/* What you get Section */}
       <section className="py-20 bg-brand-pink-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="slide-up" className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-              אז מה בעצם יוצא לך מזה?
+              מה כל משתתפת כמוך מקבלת?
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {whatYouGet.map((item, i) => (
                 <Card
                   key={i}

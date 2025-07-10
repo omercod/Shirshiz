@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
@@ -21,9 +21,17 @@ import { recipes } from "../../data/recipesData";
 import { Helmet } from "react-helmet";
 
 export default function RecipePage() {
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/iPad|iPhone|iPod|Macintosh/.test(ua)) {
+      setIsIosOrMac(true);
+    }
+  }, []);
+
   const { slug } = useParams();
   const [showShareMenu, setShowShareMenu] = useState(false);
   const recipe = recipes.find((r) => r.slug === slug);
+  const [isIosOrMac, setIsIosOrMac] = useState(false);
 
   const handlePrint = () => window.print();
 
@@ -384,13 +392,16 @@ export default function RecipePage() {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                onClick={handlePrint}
-                className="bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full px-8 py-4 text-lg font-semibold shadow-lg hover-lift"
-              >
-                <Printer className="w-5 h-5 ml-2" /> הדפסת מתכון
-              </Button>
+              {!isIosOrMac && (
+                <Button
+                  size="lg"
+                  onClick={handlePrint}
+                  className="bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full px-8 py-4 text-lg font-semibold shadow-lg hover-lift"
+                >
+                  <Printer className="w-5 h-5 ml-2" /> הדפסת מתכון
+                </Button>
+              )}
+
               <div className="relative">
                 <Button
                   size="lg"

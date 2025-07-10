@@ -258,7 +258,16 @@ export default function Recipes() {
                         animation="slide-up"
                         delay={index * 0.05}
                       >
-                        <Card className="h-full hover-lift border-0 shadow-lg overflow-hidden bg-white">
+                        <Card className="h-full hover-lift border-0 shadow-lg overflow-hidden bg-white relative">
+                          {recipe.featured && (
+                            <div className="absolute top-4 right-4 z-10">
+                              <div className="bg-brand-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
+                                <Heart className="w-3 h-3 ml-1 fill-current" />
+                                מומלץ
+                              </div>
+                            </div>
+                          )}
+
                           <div className="relative h-40 overflow-hidden">
                             <img
                               src={recipe.image}
@@ -306,7 +315,7 @@ export default function Recipes() {
                               </div>
                             </div>
 
-                            <Link to={createPageUrl(recipe.slug)}>
+                            <Link to={createRecipeUrl(recipe.slug)}>
                               <Button
                                 size="sm"
                                 className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full font-semibold"

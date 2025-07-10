@@ -96,6 +96,7 @@ export default function ContactForm({ productName = null }) {
             required
             value={formData.name}
             onChange={handleInputChange}
+            placeholder="הכניסי את שמך המלא"
           />
         </div>
         <div>
@@ -107,6 +108,7 @@ export default function ContactForm({ productName = null }) {
             required
             value={formData.phone}
             onChange={handleInputChange}
+            placeholder="0501234567"
           />
         </div>
       </div>
@@ -121,6 +123,7 @@ export default function ContactForm({ productName = null }) {
           value={formData.email}
           onChange={handleInputChange}
           dir="ltr"
+          placeholder="name@email.com"
         />
       </div>
 
@@ -134,13 +137,14 @@ export default function ContactForm({ productName = null }) {
             rows={4}
             value={formData.message}
             onChange={handleInputChange}
+            placeholder="ספרי לי מה היית רוצה לדעת?"
           />
         </div>
       )}
 
       <Button
         type="submit"
-        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-4 text-lg sm:text-xl font-bold shadow-xl transition duration-300 hover:scale-105"
+        className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full py-6 text-lg sm:text-xl md:text-2xl font-bold shadow-xl transition duration-300 hover:scale-105 text-center"
       >
         <Send className="w-6 h-6 ml-2" />
         {productName ? "יאללה, אני רוצה להתחיל!" : "שליחת הודעה"}
