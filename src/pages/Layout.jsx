@@ -216,7 +216,15 @@ export default function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main className="pt-16">{children}</main>
+      <main
+        className={
+          location.pathname === createPageUrl("Home")
+            ? "mt-0"
+            : "pt-16 md:pt-16"
+        }
+      >
+        {children}
+      </main>
 
       {/* Footer */}
       <footer className="bg-brand-pink-50 border-t border-brand-pink-100 mt-0">
