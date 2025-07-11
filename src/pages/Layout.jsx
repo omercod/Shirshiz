@@ -228,7 +228,7 @@ export default function Layout({ children }) {
             <div>
               <div className="flex items-center space-x-3 space-x-reverse mb-4">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.webp"
+                  src="/assets/images/home/shirProflie.webp"
                   alt="שיר עזריה - SHIRSHIZ"
                   className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
                   loading="lazy"
