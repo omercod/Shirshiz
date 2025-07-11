@@ -11,7 +11,7 @@ export default function Workshops() {
       id: 1,
       title: "קורס מאפס למקצוענית",
       subtitle: "קורס הפרימיום שלי",
-      image: "/assets/images/workShops/coursePro.jpg",
+      image: "/assets/images/workShops/coursePro.webp",
       description: "הקורס המקיף שיהפוך אתכן למקצועניות, בשני מפגשים מעשיים.",
       features: [
         "2 מפגשים (עוגת בנטו + קאפקייקס +עוגה גדולה מעוצבת)",
@@ -26,7 +26,7 @@ export default function Workshops() {
       id: 2,
       title: "סדנת עוגות וינטג'",
       subtitle: "הסדנה הקלאסית שלי",
-      image: "/assets/images/gallery/pinkVin.jpg",
+      image: "/assets/images/gallery/pinkVin.webp",
       description: "במהלכה תלמדו לעצב עוגה מרשימה בסגנון וינטג' קלאסי",
       features: [
         "מפגש אחד ממוקד",

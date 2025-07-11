@@ -88,9 +88,11 @@ export default function Layout({ children }) {
 
       {/* Header */}
       <header
+        style={{ transform: "translateZ(0)", willChange: "opacity, transform" }}
         className="
           fixed top-0 left-0 right-0
           z-50
+          h-16
           w-full
           bg-white/90 backdrop-blur-md
           border-b border-brand-pink-100 shadow-sm
@@ -111,10 +113,11 @@ export default function Layout({ children }) {
               className="flex items-center space-x-3 space-x-reverse cursor-pointer"
             >
               <img
-                src="/assets/images/home/shirProflie.jpg"
+                src="/assets/images/home/shirProflie.webp"
                 alt="שיר עזריה - SHIRSHIZ"
                 className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
-               loading="lazy" />
+                loading="lazy"
+              />
               <div>
                 <span className="text-xl font-bold text-gray-800 leading-none">
                   SHIRSHIZ
@@ -216,15 +219,7 @@ export default function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main
-        className={
-          location.pathname === createPageUrl("Home")
-            ? "mt-0"
-            : "pt-16 md:pt-16"
-        }
-      >
-        {children}
-      </main>
+      <main className="pt-16">{children}</main>
 
       {/* Footer */}
       <footer className="bg-brand-pink-50 border-t border-brand-pink-100 mt-0">
@@ -233,10 +228,11 @@ export default function Layout({ children }) {
             <div>
               <div className="flex items-center space-x-3 space-x-reverse mb-4">
                 <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.jpg"
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.webp"
                   alt="שיר עזריה - SHIRSHIZ"
                   className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
-                 loading="lazy" />
+                  loading="lazy"
+                />
                 <div>
                   <span className="text-lg font-bold text-gray-800 leading-none">
                     SHIRSHIZ

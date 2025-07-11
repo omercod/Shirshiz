@@ -31,7 +31,7 @@ export default function ProCourseWorkshop() {
 
   const session1 = {
     title: "מפגש 1:  מארז בנטו וקאפקייקס בסגנון וינטג'",
-    image: "/assets/images/home/Inabl_box.jpg",
+    image: "/assets/images/home/Inabl_box.webp",
     features: [
       "הכנת קרם חמאה שוויצרי מהיסוד, כולל למידת כל ההתרחישים בדרך",
       "הכנת מילוי לעוגה - קרם גנאש שוקולד",
@@ -46,7 +46,7 @@ export default function ProCourseWorkshop() {
 
   const session2 = {
     title: "מפגש 2: עוגה מעוצבת עם אלמנטים",
-    image: "/assets/images/home/yuval_bearCake.jpg",
+    image: "/assets/images/home/yuval_bearCake.webp",
     features: [
       "טכניקה נכונה לעיטוף העוגה וחידוד דגשים לעבודה נכונה עם הקרם",
       "הכנת אלמנטים מדף סוכר ומצימקאו",
@@ -106,10 +106,11 @@ export default function ProCourseWorkshop() {
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/images/home/yuval_bearCake.jpg"
+            src="/assets/images/home/yuval_bearCake.webp"
             alt="קורס מאפס למקצוענית"
             className="w-full h-full object-cover"
-           loading="lazy" />
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
         </div>
 
@@ -149,15 +150,17 @@ export default function ProCourseWorkshop() {
             </p>
             <div className="flex justify-center gap-4">
               <img
-                src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3"
+                src="/assets/images/gallery/goldDesert.webp"
                 alt="עוגה מקצועית"
                 className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-               loading="lazy" />
+                loading="lazy"
+              />
               <img
-                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3"
+                src="/assets/images/gallery/liloAndStich.webp"
                 alt="עוגת יום הולדת"
                 className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-               loading="lazy" />
+                loading="lazy"
+              />
             </div>
           </AnimateOnScroll>
         </div>
@@ -205,7 +208,8 @@ export default function ProCourseWorkshop() {
                       src={session1.image}
                       alt={session1.title}
                       className="max-h-80 w-auto object-cover rounded-lg"
-                     loading="lazy" />
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </Card>
@@ -237,7 +241,8 @@ export default function ProCourseWorkshop() {
                       src={session2.image}
                       alt={session2.title}
                       className="max-h-80 w-auto object-cover rounded-lg"
-                     loading="lazy" />
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </Card>

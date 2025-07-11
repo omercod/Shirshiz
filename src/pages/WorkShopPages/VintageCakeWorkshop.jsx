@@ -85,13 +85,13 @@ export default function VintageCakeWorkshop() {
       name: "תמר",
       text: "הייתי בסדנה של שיר המהממת, בהתחלה כזה היה יותר קשה ולא היה לי ביטחון אבל עכשיו אני עם ביטחון עצום וזה כזה מזה כיף ויותר קל עכשיו, באמת שכדאי לכם, ממליצה מאוד!",
       rating: 5,
-      image: "/assets/images/home/tamar_review.jpg",
+      image: "/assets/images/home/tamar_review.webp",
     },
     {
       name: "דאנה ארובס",
       text: "הייתה סדנה מושלמת!!!!!! והעוגה יצאה כל כך יפה וטעימה ובאה בול בשביל להרשים את כל המשפחה אחרי ארוחת שישי 🥰🥰🥰🥰🥰",
       rating: 5,
-      image: "/assets/images/home/dana_review.jpg",
+      image: "/assets/images/home/dana_review.webp",
     },
   ];
 
@@ -120,7 +120,7 @@ export default function VintageCakeWorkshop() {
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/assets/images/gallery/pinkVin.jpg"
+            src="/assets/images/gallery/pinkVin.webp"
             alt="סדנת עוגות וינטג'"
             className="w-full h-full object-cover"
            loading="lazy" />
@@ -185,7 +185,7 @@ export default function VintageCakeWorkshop() {
                 playsInline
                 controls
                 preload="metadata"
-                poster="/assets/images/home/tamar_review.jpg"
+                poster="/assets/images/home/tamar_review.webp"
                 className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl"
               >
                 <source
@@ -256,10 +256,10 @@ export default function VintageCakeWorkshop() {
         </AnimateOnScroll>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto px-4">
           {[
-            "/assets/images/home/tamar_review.jpg",
-            "/assets/images/workShops/vinWorkShop.jpg",
-            "/assets/images/workShops/vinwork1.jpg",
-            "/assets/images/workShops/vinwork2.jpg",
+            "/assets/images/home/tamar_review.webp",
+            "/assets/images/workShops/vinWorkShop.webp",
+            "/assets/images/workShops/vinwork1.webp",
+            "/assets/images/workShops/vinwork2.webp",
           ].map((img, idx) => (
             <AnimateOnScroll
               key={idx}

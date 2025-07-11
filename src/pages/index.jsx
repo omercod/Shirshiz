@@ -40,10 +40,12 @@ function _getCurrentPage(url) {
     urlLastPart = urlLastPart.split("?")[0];
   }
 
+  if (!urlLastPart) return "Home";
+
   const pageName = Object.keys(PAGES).find(
     (page) => page.toLowerCase() === urlLastPart.toLowerCase()
   );
-  return pageName || Object.keys(PAGES)[0];
+  return pageName || "Home";
 }
 
 function PagesContent() {
@@ -54,7 +56,6 @@ function PagesContent() {
     <Layout currentPageName={currentPage}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Home" element={<Home />} />
         <Route path="/Workshops" element={<Workshops />} />
         <Route path="/About" element={<About />} />
         <Route path="/Recipes" element={<Recipes />} />

@@ -480,7 +480,7 @@ export default function RecipePage() {
         <div className="print-header">
           <div className="print-logo">
             <img
-              src="../../assets/images/home/shirProflie.jpg"
+              src="../../assets/images/home/shirProflie.webp"
               alt="שיר עזריה"
               className="print-logo-image"
              loading="lazy" />

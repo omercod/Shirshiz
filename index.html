@@ -43,8 +43,18 @@
       content="https://shirshiz.co.il/assets/images/home/shirshizLogo.jpg"
     />
 
-    <!-- CSS & Scripts -->
-    <link rel="stylesheet" href="/assets/css/accessibility.css" />
+    <!-- CSS preload -->
+    <link
+      rel="preload"
+      href="/assets/css/accessibility.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/accessibility.css"
+    /></noscript>
+
+    <!-- Main JS -->
     <script type="module" src="/src/main.jsx"></script>
   </head>
 
@@ -77,7 +87,5 @@
         <textarea name="message"></textarea>
       </form>
     </div>
-
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

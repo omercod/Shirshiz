@@ -23,7 +23,7 @@ export default function ThankYou() {
         subtitle: "המסע שלך להפוך למקצוענית בעיצוב עוגות מתחיל כאן",
         description:
           "הקורס הפרימיום שלי יעניק לך את כל הכלים והידע הדרושים כדי להפוך את התשוקה שלך לעוגות למקצוע אמיתי.",
-        image: "/assets/images/home/yuval_bearCake.jpg",
+        image: "/assets/images/home/yuval_bearCake.webp",
         showNextSteps: true,
         nextSteps: [
           "אחזור אליך תוך 72 שעות לאישור המקום",
@@ -38,7 +38,7 @@ export default function ThankYou() {
         subtitle: "מוכנה ליצור את עוגת החלומות שלך?",
         description:
           "בסדנה הזו תלמדי את כל הטכניקות ליצירת עוגות וינטג' מרשימות עם קרם חמאה שוויצרי מושלם.",
-        image: "/assets/images/home/witheBirthdayCake.jpg",
+        image: "/assets/images/home/witheBirthdayCake.webp",
         showNextSteps: true,
         nextSteps: [
           "אחזור אליך תוך 72 שעות לאישור המקום",
@@ -53,7 +53,7 @@ export default function ThankYou() {
         subtitle: "כיף לקבל ממך הודעה",
         description:
           "אני מאוד מעריכה את הזמן שהקדשת כדי ליצור איתי קשר. אני מבטיחה לקרוא בעיון את ההודעה שלך ולחזור אלייך בהקדם האפשרי.",
-        image: "/assets/images/home/shirProflie.jpg",
+        image: "/assets/images/home/shirProflie.webp",
         showNextSteps: false,
       };
     }

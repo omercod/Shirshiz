@@ -159,7 +159,7 @@ const RecipePrint = forwardRef(({ recipe }, ref) => {
       <div className="print-header">
         <div className="print-logo">
           <img
-            src="/assets/images/home/shirProflie.jpg"
+            src="/assets/images/home/shirProflie.webp"
             alt=""
             className="print-logo-image"
            loading="lazy" />
