@@ -18,9 +18,11 @@ import {
   MessageSquare,
   Sparkles,
   FileText,
+  ZoomInIcon,
 } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
+import { useState } from "react";
 
 export default function ProCourseWorkshop() {
   const scrollToContact = () => {
@@ -28,6 +30,7 @@ export default function ProCourseWorkshop() {
       .getElementById("contact-form")
       .scrollIntoView({ behavior: "smooth" });
   };
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const session1 = {
     title: "מפגש 1:  מארז בנטו וקאפקייקס בסגנון וינטג'",
@@ -133,7 +136,6 @@ export default function ProCourseWorkshop() {
           </Button>
         </AnimateOnScroll>
       </section>
-
       {/* Intro Section */}
       <section className="pb-20 pt-10 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -149,22 +151,52 @@ export default function ProCourseWorkshop() {
               לדרך בביטחון מלא.
             </p>
             <div className="flex justify-center gap-4">
-              <img
-                src="/assets/images/gallery/goldDesert.webp"
-                alt="עוגה מקצועית"
-                className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-                loading="lazy"
-              />
-              <img
-                src="/assets/images/gallery/liloAndStich.webp"
-                alt="עוגת יום הולדת"
-                className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-                loading="lazy"
-              />
+              {[
+                "/assets/images/gallery/goldDesert.webp",
+                "/assets/images/gallery/liloAndStich.webp",
+              ].map((img, idx) => (
+                <div
+                  key={idx}
+                  className="relative rounded-2xl shadow-lg overflow-hidden group hover-lift cursor-pointer"
+                  onClick={() => setSelectedImage(img)}
+                >
+                  <img
+                    src={img}
+                    alt=""
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                    <ZoomInIcon className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+              ))}
             </div>
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            className="
+            max-h-[50vh] 
+            max-w-sm 
+            mx-4 my-8 
+            rounded-xl shadow-xl
+            sm:max-h-[60vh] sm:max-w-md
+            md:max-h-[80vh] md:max-w-3xl
+          "
+            alt=""
+            loading="lazy"
+          />
+        </div>
+      )}
 
       {/* Course Details */}
       <section className="py-20 bg-brand-pink-50">

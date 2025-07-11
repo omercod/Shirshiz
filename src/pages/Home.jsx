@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] pt-16 flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] pt-12 flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
