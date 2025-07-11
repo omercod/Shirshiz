@@ -106,7 +106,7 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+                 loading="lazy" />
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                   onClick={() => {
@@ -150,7 +150,7 @@ export default function Gallery() {
               src={selectedImage}
               alt={selectedImageAlt}
               className="w-auto max-h-[80vh] mx-auto rounded-xl shadow-xl"
-            />
+             loading="lazy" />
           </div>
         </div>
       )}

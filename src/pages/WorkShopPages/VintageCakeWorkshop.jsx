@@ -123,7 +123,7 @@ export default function VintageCakeWorkshop() {
             src="/assets/images/gallery/pinkVin.jpg"
             alt="סדנת עוגות וינטג'"
             className="w-full h-full object-cover"
-          />
+           loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         </div>
 
@@ -271,7 +271,7 @@ export default function VintageCakeWorkshop() {
                 src={img}
                 className="object-cover w-full h-36 sm:h-48 md:h-56 transition-transform duration-300 group-hover:scale-105"
                 alt=""
-              />
+               loading="lazy" />
               <div
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => setSelectedImage(img)}
@@ -300,7 +300,7 @@ export default function VintageCakeWorkshop() {
             md:max-h-[80vh] md:max-w-3xl
           "
             alt=""
-          />
+           loading="lazy" />
         </div>
       )}
 

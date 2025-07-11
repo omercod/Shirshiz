@@ -162,7 +162,7 @@ const RecipePrint = forwardRef(({ recipe }, ref) => {
             src="/assets/images/home/shirProflie.jpg"
             alt=""
             className="print-logo-image"
-          />
+           loading="lazy" />
           <div className="print-logo-text">
             <h1>SHIRSHIZ</h1>
             <p>By Shir Azaria</p>
@@ -172,7 +172,7 @@ const RecipePrint = forwardRef(({ recipe }, ref) => {
 
       <div className="recipe-content">
         <h1 className="recipe-title">{recipe.title}</h1>
-        <img src={recipe.image} alt={recipe.title} className="recipe-image" />
+        <img src={recipe.image} alt={recipe.title} className="recipe-image"  loading="lazy" />
         <p className="recipe-description">{recipe.descriptionLong[0]}</p>
 
         <div className="recipe-info">

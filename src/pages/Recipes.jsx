@@ -184,7 +184,7 @@ export default function Recipes() {
                               src={recipe.image}
                               alt={recipe.title}
                               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                            />
+                             loading="lazy" />
                           </div>
 
                           <CardHeader className="pb-3">
@@ -273,7 +273,7 @@ export default function Recipes() {
                               src={recipe.image}
                               alt={recipe.title}
                               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                            />
+                             loading="lazy" />
                           </div>
 
                           <CardHeader className="pb-3">

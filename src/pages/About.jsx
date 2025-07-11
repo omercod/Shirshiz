@@ -87,7 +87,7 @@ export default function About() {
                   src="/assets/images/home/shirProflie.jpg"
                   alt="שיר עזריה - קונדיטורית מקצועית עם עוגות"
                   className="rounded-2xl shadow-2xl w-full"
-                />
+                 loading="lazy" />
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-br from-brand-pink-200 to-beige-300 rounded-full opacity-70"></div>
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-beige-200 to-brand-pink-200 rounded-full opacity-80"></div>
               </div>

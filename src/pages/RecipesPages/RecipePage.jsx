@@ -359,7 +359,7 @@ export default function RecipePage() {
             src={recipe.image}
             alt={recipe.title}
             className="w-full h-full min-h-[400px] object-cover object-center"
-          />
+           loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
         <AnimateOnScroll
@@ -483,7 +483,7 @@ export default function RecipePage() {
               src="../../assets/images/home/shirProflie.jpg"
               alt="שיר עזריה"
               className="print-logo-image"
-            />
+             loading="lazy" />
             <div className="print-logo-text">
               <h1>SHIRSHIZ</h1>
               <p>By Shir Azaria</p>
@@ -519,7 +519,7 @@ export default function RecipePage() {
 
         <div className="recipe-content">
           <h1 className="recipe-title">{recipe.title}</h1>
-          <img src={recipe.image} alt={recipe.title} className="recipe-image" />
+          <img src={recipe.image} alt={recipe.title} className="recipe-image"  loading="lazy" />
           <p className="recipe-description">{recipe.descriptionLong[0]}</p>
           <div className="recipe-info">
             <div className="recipe-info-item">

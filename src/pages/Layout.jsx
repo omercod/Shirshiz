@@ -114,7 +114,7 @@ export default function Layout({ children }) {
                 src="/assets/images/home/shirProflie.jpg"
                 alt="שיר עזריה - SHIRSHIZ"
                 className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
-              />
+               loading="lazy" />
               <div>
                 <span className="text-xl font-bold text-gray-800 leading-none">
                   SHIRSHIZ
@@ -236,7 +236,7 @@ export default function Layout({ children }) {
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/b1c9656b6_shir_profile.jpg"
                   alt="שיר עזריה - SHIRSHIZ"
                   className="w-10 h-10 object-cover rounded-full border-2 border-brand-pink-200"
-                />
+                 loading="lazy" />
                 <div>
                   <span className="text-lg font-bold text-gray-800 leading-none">
                     SHIRSHIZ

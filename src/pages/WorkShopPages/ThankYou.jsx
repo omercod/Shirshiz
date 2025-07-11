@@ -117,7 +117,7 @@ export default function ThankYou() {
                     src={content.image}
                     alt="שיר עזריה"
                     className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
-                  />
+                   loading="lazy" />
                   <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-brand-pink-200 to-beige-300 rounded-full opacity-70"></div>
                   <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-beige-200 to-brand-pink-200 rounded-full opacity-80"></div>
                 </div>

@@ -126,7 +126,7 @@ export default function Workshops() {
                       src={workshop.image}
                       alt={workshop.title}
                       className="w-full h-full object-cover"
-                    />
+                     loading="lazy" />
                     {workshop.isFlagship && (
                       <div
                         className="absolute inset-0"

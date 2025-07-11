@@ -109,7 +109,7 @@ export default function ProCourseWorkshop() {
             src="/assets/images/home/yuval_bearCake.jpg"
             alt="קורס מאפס למקצוענית"
             className="w-full h-full object-cover"
-          />
+           loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
         </div>
 
@@ -152,12 +152,12 @@ export default function ProCourseWorkshop() {
                 src="https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3"
                 alt="עוגה מקצועית"
                 className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-              />
+               loading="lazy" />
               <img
                 src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3"
                 alt="עוגת יום הולדת"
                 className="w-1/3 h-auto object-cover rounded-2xl shadow-lg hover-lift"
-              />
+               loading="lazy" />
             </div>
           </AnimateOnScroll>
         </div>
@@ -205,7 +205,7 @@ export default function ProCourseWorkshop() {
                       src={session1.image}
                       alt={session1.title}
                       className="max-h-80 w-auto object-cover rounded-lg"
-                    />
+                     loading="lazy" />
                   </div>
                 </div>
               </Card>
@@ -237,7 +237,7 @@ export default function ProCourseWorkshop() {
                       src={session2.image}
                       alt={session2.title}
                       className="max-h-80 w-auto object-cover rounded-lg"
-                    />
+                     loading="lazy" />
                   </div>
                 </div>
               </Card>
