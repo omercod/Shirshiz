@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Award, Heart, Users, Clock } from "lucide-react";
+import { Award, Heart, Users, Clock, Sparkles } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CountUp from "react-countup";
+import { createPageUrl } from "@/utils";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   const achievements = [
@@ -160,6 +163,33 @@ export default function About() {
               </p>
             </div>
           </AnimateOnScroll>
+
+          {/* CTA Section */}
+          <section className="pt-10 bg-white">
+            <AnimateOnScroll
+              animation="fade-in"
+              className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+            >
+              <div className="bg-gradient-to-br from-brand-pink-50 to-beige-50 p-10 rounded-2xl shadow-lg border-2 border-brand-pink-100">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  רוצה להפוך את החלום שלך לעסק מצליח?
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+                  ההרשמה לסדנאות הקרובות בעיצומה! בואי ללמוד, להתמקצע ולקחת את
+                  האהבה שלך לעוגות לרמה הבאה.
+                </p>
+                <Link to={createPageUrl("Workshops")}>
+                  <Button
+                    size="lg"
+                    className="bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full px-8 py-4 text-lg font-semibold shadow-lg hover-lift transition-all duration-300"
+                  >
+                    <Sparkles className="w-5 h-5 ml-2" />
+                    לפרטים והרשמה לסדנאות
+                  </Button>
+                </Link>
+              </div>
+            </AnimateOnScroll>
+          </section>
         </div>
       </div>
     </div>
