@@ -164,7 +164,7 @@ const AccessibilityMenu = () => {
       </Button>
 
       {isOpen && (
-        <div dir="rtl" className="fixed bottom-24 left-10 z-[100] w-80">
+        <div dir="rtl" className="fixed bottom-28 left-10 z-[100] w-80">
           <Card className="shadow-2xl border-gray-300">
             <CardHeader className="bg-brand-pink-500 text-white p-4 flex flex-row items-center justify-between rounded-t-lg">
               <CardTitle className="text-lg flex items-center gap-2">
