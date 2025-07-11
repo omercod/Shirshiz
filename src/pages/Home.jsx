@@ -92,6 +92,7 @@ export default function Home() {
             src="/assets/images/home/cupCakes_valen.JPG"
             alt="רקע עוגות מעוצבות"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
@@ -108,6 +109,7 @@ export default function Home() {
                   src="/assets/images/home/shirshizLogo.jpg"
                   alt="SHIRSHIZ Logo"
                   className="h-28 md:h-36 lg:h-44"
+                  loading="lazy"
                 />
               </div>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-brand-pink-600 mb-6 tracking-tight">
@@ -176,6 +178,7 @@ export default function Home() {
                 src="/assets/images/home/shirProflie.jpg"
                 alt="שיר עזריה - קונדיטורית מקצועית עם עוגות"
                 className="rounded-2xl shadow-2xl w-full"
+                loading="lazy"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-brand-pink-200 to-beige-300 rounded-full opacity-80"></div>
             </div>
@@ -296,6 +299,7 @@ export default function Home() {
                 src="/assets/images/home/blueButterfly.jpg"
                 alt="עוגת פרפרים"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -318,6 +322,7 @@ export default function Home() {
                 src="/assets/images/home/engade_lin.jpg"
                 alt="עוגת אירוסין"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -341,6 +346,7 @@ export default function Home() {
                 src="/assets/images/home/miniMouse.jpg"
                 alt="עוגת מיני מאוס"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -394,6 +400,7 @@ export default function Home() {
                 src="/assets/images/home/HeartCake.jpg"
                 alt="עוגת בת מצווה"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -446,6 +453,7 @@ export default function Home() {
                 src="/assets/images/home/Bar_miitzva.jpg"
                 alt="עוגת בר מצווה"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -468,6 +476,7 @@ export default function Home() {
                 src="/assets/images/home/spiderMan_cake.jpg"
                 alt="עוגת ספיידרמן"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -521,6 +530,7 @@ export default function Home() {
                 src="/assets/images/home/yuval_bearCake.jpg"
                 alt="עוגת דובי וינטאג'"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
@@ -587,6 +597,7 @@ export default function Home() {
                         src={testimonial.image}
                         alt="עוגה מהסדנה"
                         className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                         <ZoomInIcon className="w-10 h-10 text-white" />
@@ -627,6 +638,7 @@ export default function Home() {
               src={selectedImage}
               alt={selectedImageAlt}
               className="w-auto max-h-[80vh] mx-auto rounded-xl shadow-xl"
+              loading="lazy"
             />
           </div>
         </div>
@@ -675,6 +687,7 @@ export default function Home() {
                     src="/assets/images/home/cupCakes.jpg"
                     alt="יצירת קשר - עוגות מעוצבות"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
