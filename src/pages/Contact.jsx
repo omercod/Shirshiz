@@ -7,7 +7,6 @@ import {
   Send,
   MessageSquare,
 } from "lucide-react";
-import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
 import {
   Accordion,
@@ -27,19 +26,14 @@ export default function Contact() {
         <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-brand-pink-200 rounded-full opacity-15 translate-y-32"></div>
         <div className="absolute top-1/2 left-0 w-48 h-48 bg-beige-200 rounded-full opacity-25 -translate-x-24"></div>
 
-        <div className="relative">
-          <AnimateOnScroll
-            animation="fade-in"
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              יצירת קשר
-            </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              יש לכן שאלות על הסדנאות? רוצות לשמוע עוד פרטים? אני כאן בשבילכן
-              ואשמח לעזור בכל דבר!
-            </p>
-          </AnimateOnScroll>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            יצירת קשר
+          </h1>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            יש לכן שאלות על הסדנאות? רוצות לשמוע עוד פרטים? אני כאן בשבילכן
+            ואשמח לעזור בכל דבר!
+          </p>
         </div>
       </div>
 
@@ -47,7 +41,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <AnimateOnScroll animation="slide-up">
+            <div>
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
@@ -59,11 +53,11 @@ export default function Contact() {
                   <ContactForm />
                 </CardContent>
               </Card>
-            </AnimateOnScroll>
+            </div>
 
             {/* Contact Information */}
             <div className="space-y-8">
-              <AnimateOnScroll animation="slide-up" delay={0.1}>
+              <div>
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-gray-900">
@@ -114,9 +108,9 @@ export default function Contact() {
                     </div>
                   </CardContent>
                 </Card>
-              </AnimateOnScroll>
+              </div>
 
-              <AnimateOnScroll animation="slide-up" delay={0.3}>
+              <div>
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-xl font-bold text-gray-900 flex items-center">
@@ -132,61 +126,55 @@ export default function Contact() {
                     </p>
                   </CardContent>
                 </Card>
-              </AnimateOnScroll>
+              </div>
             </div>
           </div>
 
           {/* FAQ Section */}
           <section className="py-20 bg-white">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <AnimateOnScroll
-                animation="slide-up"
-                className="text-center mb-12"
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
-                  <MessageSquare className="w-8 h-8 text-brand-pink-500" />
-                  שאלות נפוצות
-                </h2>
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  אספתי את כל השאלות שאתן שואלות אותי הכי הרבה - כדי שיהיה לכן
-                  הכי ברור ונוח
-                </p>
-              </AnimateOnScroll>
-              <Accordion type="single" collapsible className="w-full mt-10">
-                {[
-                  {
-                    q: "אפשר לבחור טעמים ומילויים?",
-                    a: "בטח! חשוב לי שהעוגה תתאים בדיוק לטעמים שאתם אוהבים. אני כאן כדי להמליץ לכן את השילוב המושלם שיהפוך את העוגה לא רק ליפה, אלא גם לכזו שלא תוכלו להפסיק ללקק את האצבעות.",
-                  },
-                  {
-                    q: "אם אני לא יצירתית, הסדנה בכל זאת מתאימה לי?",
-                    a: "כן! גם בלי ניסיון קודם תצאי מהסדנה עם עוגה מהממת שעיצבת בעצמך. נעבור יחד על כל הטכניקות כדי שתרגישי בטוחה, ותצאי עם תוצאה שלא תאמיני שזו את הכנת.",
-                  },
-                  {
-                    q: "האם מקבלים חוברת מתכונים והסברים להמשך בבית?",
-                    a: "ברור! בסוף כל סדנה תקבלי חוברת מתכונים והסברים מפורטים, וגם בונוסים ייחודיים שיעזרו לך להמשיך ליצור בבית.",
-                  },
-                  {
-                    q: "כמה זמן מראש צריך להזמין עוגה?",
-                    a: "זה תלוי בעיצוב ובמועד המבוקש, אבל לרוב מומלץ לפחות שבועיים מראש כדי לשריין. כמובן שאם יש לך תאריך, דברי איתי ונראה מה אפשרי.",
-                  },
-                ].map((item, i) => (
-                  <AnimateOnScroll key={i} animation="slide-up" delay={i * 0.1}>
-                    <AccordionItem
-                      value={`item-${i}`}
-                      className="bg-white border-0 shadow-md rounded-lg mb-4"
-                    >
-                      <AccordionTrigger className="p-6 text-xl md:text-xl font-semibold text-right hover:no-underline">
-                        {item.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="p-6 pt-0 text-gray-600 text-lg leading-relaxed">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </AnimateOnScroll>
-                ))}
-              </Accordion>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
+                <MessageSquare className="w-8 h-8 text-brand-pink-500" />
+                שאלות נפוצות
+              </h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                אספתי את כל השאלות שאתן שואלות אותי הכי הרבה - כדי שיהיה לכן הכי
+                ברור ונוח
+              </p>
             </div>
+            <Accordion type="single" collapsible className="w-full mt-10">
+              {[
+                {
+                  q: "אפשר לבחור טעמים ומילויים?",
+                  a: "בטח! חשוב לי שהעוגה תתאים בדיוק לטעמים שאתם אוהבים. אני כאן כדי להמליץ לכן את השילוב המושלם שיהפוך את העוגה לא רק ליפה, אלא גם לכזו שלא תוכלו להפסיק ללקק את האצבעות.",
+                },
+                {
+                  q: "אם אני לא יצירתית, הסדנה בכל זאת מתאימה לי?",
+                  a: "כן! גם בלי ניסיון קודם תצאי מהסדנה עם עוגה מהממת שעיצבת בעצמך. נעבור יחד על כל הטכניקות כדי שתרגישי בטוחה, ותצאי עם תוצאה שלא תאמיני שזו את הכנת.",
+                },
+                {
+                  q: "האם מקבלים חוברת מתכונים והסברים להמשך בבית?",
+                  a: "ברור! בסוף כל סדנה תקבלי חוברת מתכונים והסברים מפורטים, וגם בונוסים ייחודיים שיעזרו לך להמשיך ליצור בבית.",
+                },
+                {
+                  q: "כמה זמן מראש צריך להזמין עוגה?",
+                  a: "זה תלוי בעיצוב ובמועד המבוקש, אבל לרוב מומלץ לפחות שבועיים מראש כדי לשריין. כמובן שאם יש לך תאריך, דברי איתי ונראה מה אפשרי.",
+                },
+              ].map((item, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`item-${i}`}
+                  className="bg-white border-0 shadow-md rounded-lg mb-4"
+                >
+                  <AccordionTrigger className="p-6 text-xl md:text-xl font-semibold text-right hover:no-underline">
+                    {item.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="p-6 pt-0 text-gray-600 text-lg leading-relaxed">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </section>
         </div>
       </div>

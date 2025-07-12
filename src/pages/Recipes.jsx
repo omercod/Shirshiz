@@ -184,7 +184,8 @@ export default function Recipes() {
                               src={recipe.image}
                               alt={recipe.title}
                               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                             loading="lazy" />
+                              loading="lazy"
+                            />
                           </div>
 
                           <CardHeader className="pb-3">
@@ -252,13 +253,13 @@ export default function Recipes() {
                   </AnimateOnScroll>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {allRecipes.map((recipe, index) => (
-                      <AnimateOnScroll
-                        key={recipe.id}
-                        animation="slide-up"
-                        delay={index * 0.05}
-                      >
-                        <Card className="h-full hover-lift border-0 shadow-lg overflow-hidden bg-white relative">
+                    {allRecipes.map((recipe, index) =>
+                      index === 0 ? (
+                        // הקארד הראשון ללא אנימציה
+                        <Card
+                          key={recipe.id}
+                          className="h-full hover-lift border-0 shadow-lg overflow-hidden bg-white relative"
+                        >
                           {recipe.featured && (
                             <div className="absolute top-4 right-4 z-10">
                               <div className="bg-brand-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
@@ -273,7 +274,8 @@ export default function Recipes() {
                               src={recipe.image}
                               alt={recipe.title}
                               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                             loading="lazy" />
+                              loading="lazy"
+                            />
                           </div>
 
                           <CardHeader className="pb-3">
@@ -325,8 +327,84 @@ export default function Recipes() {
                             </Link>
                           </CardContent>
                         </Card>
-                      </AnimateOnScroll>
-                    ))}
+                      ) : (
+                        // כל השאר עם אנימציה
+                        <AnimateOnScroll
+                          key={recipe.id}
+                          animation="slide-up"
+                          delay={index * 0.05}
+                        >
+                          <Card className="h-full hover-lift border-0 shadow-lg overflow-hidden bg-white relative">
+                            {recipe.featured && (
+                              <div className="absolute top-4 right-4 z-10">
+                                <div className="bg-brand-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
+                                  <Heart className="w-3 h-3 ml-1 fill-current" />
+                                  מומלץ
+                                </div>
+                              </div>
+                            )}
+
+                            <div className="relative h-40 overflow-hidden">
+                              <img
+                                src={recipe.image}
+                                alt={recipe.title}
+                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                                loading="lazy"
+                              />
+                            </div>
+
+                            <CardHeader className="pb-3">
+                              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                                <Badge
+                                  className={getCategoryColor(recipe.category)}
+                                  variant="outline"
+                                >
+                                  {recipe.category}
+                                </Badge>
+                                {recipe.tags?.map((tag, idx) => (
+                                  <Badge
+                                    key={idx}
+                                    className={getTagColor(tag)}
+                                    variant="outline"
+                                  >
+                                    {tag}
+                                  </Badge>
+                                ))}
+                              </div>
+                              <CardTitle className="text-lg font-bold text-gray-900 leading-tight">
+                                {recipe.title}
+                              </CardTitle>
+                            </CardHeader>
+
+                            <CardContent className="pt-0">
+                              <p className="text-gray-600 mb-3 leading-relaxed text-sm">
+                                {recipe.description}
+                              </p>
+
+                              <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-500">
+                                <div className="flex items-center">
+                                  <Clock className="w-4 h-4 ml-2 text-brand-pink-500" />
+                                  {recipe.time}
+                                </div>
+                                <div className="flex items-center">
+                                  <Hash className="w-4 h-4 ml-2 text-brand-pink-500" />
+                                  {recipe.servings}
+                                </div>
+                              </div>
+
+                              <Link to={createRecipeUrl(recipe.slug)}>
+                                <Button
+                                  size="sm"
+                                  className="w-full bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full font-semibold"
+                                >
+                                  צפייה במתכון
+                                </Button>
+                              </Link>
+                            </CardContent>
+                          </Card>
+                        </AnimateOnScroll>
+                      )
+                    )}
                   </div>
                 </div>
               )}

@@ -665,8 +665,34 @@ export default function Home() {
         </div>
       )}
 
+      {/* CTA Section */}
+      <section className="py-20 bg-brand-pink-500 text-white">
+        <AnimateOnScroll
+          animation="fade-in"
+          className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            מוכנות להתחיל את המסע שלכן?
+          </h2>
+          <p className="text-xl mb-8 text-brand-pink-100">
+            הצטרפו לסדנאות מקצועיות בעולם הקונדטוריה ולמדו ליצור עוגות מדהימות
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link to={createPageUrl("Workshops")}>
+              <Button
+                size="lg"
+                className="bg-white text-brand-pink-600 hover:bg-gray-50 rounded-full px-8 py-4 text-lg font-semibold hover-lift"
+              >
+                <ChefHat className="w-5 h-5 ml-2" />
+                צפו בסדנאות הזמינות
+              </Button>
+            </Link>
+          </div>
+        </AnimateOnScroll>
+      </section>
+
       {/* Home Page Contact Form */}
-      <section className="pb-20 bg-white">
+      <section className="pt-10 pb-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll animation="slide-up">
             <Card className="border-0 shadow-2xl overflow-hidden">
@@ -694,42 +720,6 @@ export default function Home() {
             </Card>
           </AnimateOnScroll>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-brand-pink-500 text-white">
-        <AnimateOnScroll
-          animation="fade-in"
-          className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            מוכנות להתחיל את המסע שלכן?
-          </h2>
-          <p className="text-xl mb-8 text-brand-pink-100">
-            הצטרפו לסדנאות מקצועיות בעולם הקונדטוריה ולמדו ליצור עוגות מדהימות
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to={createPageUrl("Workshops")}>
-              <Button
-                size="lg"
-                className="bg-white text-brand-pink-600 hover:bg-gray-50 rounded-full px-8 py-4 text-lg font-semibold hover-lift"
-              >
-                <ChefHat className="w-5 h-5 ml-2" />
-                צפו בסדנאות הזמינות
-              </Button>
-            </Link>
-            <Link to={createPageUrl("Contact")}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white bg-transparent hover:bg-white/10 hover:text-white rounded-full px-8 py-4 text-lg font-semibold hover-lift transition-all duration-300"
-              >
-                <Mail className="w-5 h-5 ml-2" />
-                יצירת קשר
-              </Button>
-            </Link>
-          </div>
-        </AnimateOnScroll>
       </section>
     </div>
   );
