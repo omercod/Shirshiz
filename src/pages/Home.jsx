@@ -6,7 +6,6 @@ import {
   Star,
   ArrowLeft,
   ChefHat,
-  Mail,
   Cake,
   Send,
   Video,
@@ -128,16 +127,6 @@ export default function Home() {
                   >
                     <ChefHat className="w-5 h-5 ml-2" />
                     פרטים נוספים על הסדנאות
-                  </Button>
-                </Link>
-                <Link to={createPageUrl("Contact")}>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-brand-pink-500 text-brand-pink-600 bg-white/90 hover:bg-brand-pink-500 hover:text-brand-pink-600 rounded-full px-8 py-4 text-lg font-semibold hover-lift transition-all duration-300"
-                  >
-                    <Mail className="w-5 h-5 ml-2" />
-                    יצירת קשר
                   </Button>
                 </Link>
               </div>
