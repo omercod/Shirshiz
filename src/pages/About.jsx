@@ -5,6 +5,7 @@ import CountUp from "react-countup";
 import { createPageUrl } from "@/utils";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet";
 
 export default function About() {
   const achievements = [
@@ -32,6 +33,18 @@ export default function About() {
 
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <Helmet>
+        <title>קצת עליי - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="נעים להכיר! אני שיר, מעצבת עוגות בהתאמה אישית ומנחת סדנאות עם מעל 6 שנות ניסיון. בואי לקרוא על הדרך שלי, התשוקה לקונדיטוריה והחזון שלי."
+        />
+        <meta
+          name="keywords"
+          content="קצת עליי, שירשיז, עוגות מעוצבות, קונדיטוריה, מנחת סדנאות, עוגות בהתאמה אישית, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Decorative Header Background */}
       <div className="bg-gradient-to-br from-brand-pink-100 via-beige-100 to-white relative overflow-hidden">
         {/* Decorative Elements */}

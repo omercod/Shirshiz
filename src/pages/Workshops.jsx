@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Crown, ChefHat } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import { Helmet } from "react-helmet";
 
 export default function Workshops() {
   const workshops = [
@@ -41,6 +42,18 @@ export default function Workshops() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>סדנאות - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="בחרי בין שני מסלולי הסדנאות שלנו: וינטג' או מאפס למקצוענית, וקבלי ליווי אישי, אווירה ביתית והזדמנות אמיתית ליצור עוגות מרשימות בעצמך."
+        />
+        <meta
+          name="keywords"
+          content="סדנאות עיצוב עוגות, סדנת וינטג', מאפס למקצוענית, קורס קונדיטוריה, שירשיז, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Header */}
       <div className="bg-gradient-to-bl from-brand-pink-100 via-beige-50 to-brand-pink-50 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink-200 rounded-full opacity-20 -translate-y-32 translate-x-32"></div>
@@ -126,7 +139,8 @@ export default function Workshops() {
                       src={workshop.image}
                       alt={workshop.title}
                       className="w-full h-full object-cover"
-                     loading="lazy" />
+                      loading="lazy"
+                    />
                     {workshop.isFlagship && (
                       <div
                         className="absolute inset-0"

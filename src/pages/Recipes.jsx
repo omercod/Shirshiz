@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Clock, ChefHat, Heart, Search, Hash } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { recipes } from "../data/recipesData";
+import { Helmet } from "react-helmet";
 
 function shuffleArray(array) {
   return array
@@ -73,6 +74,18 @@ export default function Recipes() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>מתכונים - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="אוסף מתכונים אהובים ומנוסים של שיר שזכו לשיפורים ולטיפים אישיים. כאן תמצאי מתכונים שתצליחי להכין כבר בפעם הראשונה."
+        />
+        <meta
+          name="keywords"
+          content="מתכונים, עוגות, קינוחים, קונדיטוריה, שירשיז, מתכוני אפייה, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Header */}
       <div className="pt-16 bg-gradient-to-tr from-beige-100 via-brand-pink-50 to-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-beige-200 rounded-full opacity-25 -translate-y-36 translate-x-36"></div>

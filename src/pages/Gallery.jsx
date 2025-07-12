@@ -3,6 +3,7 @@ import { ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { galleryImages } from "@/data/galleryData";
+import { Helmet } from "react-helmet";
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -33,6 +34,18 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>גלרייה - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="הצצה לגלריית עוגות מעוצבות, קינוחים מרהיבים, ותוצרים מתוך הסדנאות. כל תמונה מספרת סיפור של יצירתיות, דייקנות ואהבה לקונדיטוריה."
+        />
+        <meta
+          name="keywords"
+          content="גלריה, עוגות מעוצבות, סדנאות עיצוב עוגות, קינוחים, שירשיז, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Decorative Header Background */}
       <div className="pt-16 bg-gradient-to-bl from-brand-pink-100 via-beige-50 to-white relative overflow-hidden">
         {/* Decorative Elements */}
@@ -106,7 +119,8 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                 loading="lazy" />
+                  loading="lazy"
+                />
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                   onClick={() => {
@@ -150,7 +164,8 @@ export default function Gallery() {
               src={selectedImage}
               alt={selectedImageAlt}
               className="w-auto max-h-[80vh] mx-auto rounded-xl shadow-xl"
-             loading="lazy" />
+              loading="lazy"
+            />
           </div>
         </div>
       )}

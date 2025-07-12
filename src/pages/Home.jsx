@@ -16,6 +16,7 @@ import {
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   const testimonials = [
@@ -83,6 +84,18 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="עוגות מעוצבות בהתאמה אישית וסדנאות מקצועיות עם שיר. תלמדי לעצב עוגה בעצמך גם בלי ניסיון, ותיהני מחוויה מתוקה, יחס אישי ותשומת לב עד לפרטים הקטנים."
+        />
+        <meta
+          name="keywords"
+          content="עוגות מעוצבות, סדנאות עיצוב עוגות, עוגת וינטג’, עוגת בנטו, קורס קונדיטוריה, עוגות בהתאמה אישית, קינוחים, סדנאות בנטו, שירשיז"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

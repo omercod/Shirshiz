@@ -23,6 +23,7 @@ import {
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 export default function ProCourseWorkshop() {
   const scrollToContact = () => {
@@ -105,6 +106,18 @@ export default function ProCourseWorkshop() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>קורס מאפס למקצוענית - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="קורס מקצועי שבו תלמדי להפוך את התשוקה שלך לאפייה לעסק אמיתי. כולל טכניקות עיצוב עוגות, ייעוץ ותמחור, והכל בליווי אישי של שיר."
+        />
+        <meta
+          name="keywords"
+          content="מאפס למקצוענית, קורס עיצוב עוגות, קונדיטוריה, שירשיז, להפוך תחביב לעסק, סדנת קונדיטוריה, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

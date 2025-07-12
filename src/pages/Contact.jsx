@@ -14,10 +14,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>צור קשר - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="רוצה לשמוע עוד על הסדנאות או להזמין עוגה מעוצבת? אני כאן לשאלות, פרטים והכוונה אישית. צרי קשר ואשמח לעזור!"
+        />
+        <meta
+          name="keywords"
+          content="צור קשר, סדנאות עיצוב עוגות, עוגות מעוצבות, הזמנות עוגות, שירשיז, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Decorative Header Background */}
       <div className="pt-16 bg-gradient-to-tr from-beige-100 via-brand-pink-50 to-white relative overflow-hidden">
         {/* Decorative Elements */}

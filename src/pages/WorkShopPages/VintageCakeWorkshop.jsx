@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import ContactForm from "@/components/ContactForm";
+import { Helmet } from "react-helmet";
 
 export default function VintageCakeWorkshop() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -116,6 +117,18 @@ export default function VintageCakeWorkshop() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>סדנת עוגות וינטג&apos - SHIRSHIZ</title>
+        <meta
+          name="description"
+          content="בואי ללמוד לעצב עוגת וינטג' מהממת בקרם חמאה שוויצרי בסדנה חד פעמית עם שיר. אווירה אישית, תוצאה מרשימה וטיפים לכל החיים."
+        />
+        <meta
+          name="keywords"
+          content="סדנת עוגות וינטג', קרם חמאה, עיצוב עוגות, קורס עוגות, קונדיטוריה, שירשיז, SHIRSHIZ"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -123,7 +136,8 @@ export default function VintageCakeWorkshop() {
             src="/assets/images/gallery/pinkVin.webp"
             alt="סדנת עוגות וינטג'"
             className="w-full h-full object-cover"
-           loading="lazy" />
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         </div>
 
@@ -271,7 +285,8 @@ export default function VintageCakeWorkshop() {
                 src={img}
                 className="object-cover w-full h-36 sm:h-48 md:h-56 transition-transform duration-300 group-hover:scale-105"
                 alt=""
-               loading="lazy" />
+                loading="lazy"
+              />
               <div
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30 cursor-pointer"
                 onClick={() => setSelectedImage(img)}
@@ -300,7 +315,8 @@ export default function VintageCakeWorkshop() {
             md:max-h-[80vh] md:max-w-3xl
           "
             alt=""
-           loading="lazy" />
+            loading="lazy"
+          />
         </div>
       )}
 
