@@ -166,7 +166,7 @@ export default function Home() {
               <img
                 src="/assets/images/home/shirProflie.webp"
                 alt="שיר עזריה - קונדיטורית מקצועית עם עוגות"
-                className="rounded-2xl shadow-2xl w-full"
+                className="rounded-2xl shadow-2xl w-full max-h-[450px] object-cover"
                 loading="lazy"
               />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-brand-pink-200 to-beige-300 rounded-full opacity-80"></div>
