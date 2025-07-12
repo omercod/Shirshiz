@@ -164,7 +164,7 @@ export default function Contact() {
           </div>
 
           {/* FAQ Section */}
-          <section className="py-20 bg-white">
+          <section className="pt-20 pb-10 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center gap-3">
                 <MessageSquare className="w-8 h-8 text-brand-pink-500" />
