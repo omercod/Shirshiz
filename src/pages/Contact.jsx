@@ -65,10 +65,14 @@ export default function Contact() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
+                    {/* Phone */}
                     <div className="flex items-center space-x-4 space-x-reverse">
-                      <div className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <a
+                        href="tel:0505307961"
+                        className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-brand-pink-200 transition-colors"
+                      >
                         <Phone className="w-5 h-5 text-brand-pink-600" />
-                      </div>
+                      </a>
                       <div>
                         <p className="font-semibold text-gray-900">טלפון</p>
                         <a
@@ -80,20 +84,35 @@ export default function Contact() {
                       </div>
                     </div>
 
+                    {/* Email */}
                     <div className="flex items-center space-x-4 space-x-reverse">
-                      <div className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <a
+                        href="mailto:shirazaria1@gmail.com"
+                        className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-brand-pink-200 transition-colors"
+                      >
                         <Mail className="w-5 h-5 text-brand-pink-600" />
-                      </div>
+                      </a>
                       <div>
                         <p className="font-semibold text-gray-900">מייל</p>
-                        <p className="text-gray-600">shirazaria1@gmail.com</p>
+                        <a
+                          href="mailto:shirazaria1@gmail.com"
+                          className="text-gray-600 hover:text-brand-pink-600 transition-colors"
+                        >
+                          shirazaria1@gmail.com
+                        </a>
                       </div>
                     </div>
 
+                    {/* Instagram */}
                     <div className="flex items-center space-x-4 space-x-reverse">
-                      <div className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <a
+                        href="https://www.instagram.com/shirshiz_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-brand-pink-100 rounded-full flex items-center justify-center flex-shrink-0 hover:bg-brand-pink-200 transition-colors"
+                      >
                         <Instagram className="w-5 h-5 text-brand-pink-600" />
-                      </div>
+                      </a>
                       <div>
                         <p className="font-semibold text-gray-900">אינסטגרם</p>
                         <a
@@ -110,6 +129,7 @@ export default function Contact() {
                 </Card>
               </div>
 
+              {/* Location stays the same */}
               <div>
                 <Card className="border-0 shadow-lg">
                   <CardHeader>
