@@ -31,7 +31,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Decorative Header Background */}
       <div className="bg-gradient-to-br from-brand-pink-100 via-beige-100 to-white relative overflow-hidden">
         {/* Decorative Elements */}

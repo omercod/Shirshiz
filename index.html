@@ -16,7 +16,17 @@
     <meta name="author" content="Shir Azaria" />
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/images/favicon.png"
+      sizes="32x32"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -62,7 +72,12 @@
         "@type": "Organization",
         "name": "SHIRSHIZ",
         "url": "https://shirshiz.co.il/",
-        "logo": "https://shirshiz.co.il/assets/images/home/shirshizLogo.jpg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shirshiz.co.il/assets/images/home/shirshizLogo.jpg",
+          "width": 600,
+          "height": 600
+        },
         "sameAs": [
           "https://www.instagram.com/shirshiz_/",
           "https://www.facebook.com/profile.php?id=61558124535771",
