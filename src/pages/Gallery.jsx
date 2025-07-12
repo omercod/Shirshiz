@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { galleryImages } from "@/data/galleryData";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -169,6 +171,32 @@ export default function Gallery() {
           </div>
         </div>
       )}
+
+      {/* CTA Section */}
+      <section className="pb-10 bg-white">
+        <AnimateOnScroll
+          animation="fade-in"
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
+          <div className="bg-gradient-to-br from-brand-pink-50 to-beige-50 p-6 sm:p-10 rounded-2xl shadow-lg border-2 border-brand-pink-100">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              אהבת את העיצובים בגלריה?
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+              בואי ליצור איתי עוגות משלך בסדנאות מקצועיות וחווייתיות או להזמין
+              עוגה מעוצבת בדיוק כמו שחלמת.
+            </p>
+            <Link to={createPageUrl("Workshops")}>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-brand-pink-500 hover:bg-brand-pink-600 text-white rounded-full px-8 py-4 text-base sm:text-lg font-semibold shadow-lg hover-lift transition-all duration-300"
+              >
+                לפרטים על הסדנאות והזמנות
+              </Button>
+            </Link>
+          </div>
+        </AnimateOnScroll>
+      </section>
     </div>
   );
 }
