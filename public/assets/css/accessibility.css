@@ -76,8 +76,9 @@ body.acc-no-animations *::after {
   animation: none !important;
 }
 
-body.acc-readable-font {
-  font-family: "Arial", sans-serif !important;
+body.acc-readable-font,
+body.acc-readable-font * {
+  font-family: "Heebo", "Assistant", Arial, sans-serif !important;
 }
 body.acc-readable-font h1,
 body.acc-readable-font h2,
@@ -86,7 +87,6 @@ body.acc-readable-font h4,
 body.acc-readable-font h5,
 body.acc-readable-font h6,
 body.acc-readable-font .font-bold {
-  font-family: "Arial", sans-serif !important;
   font-weight: bold;
 }
 
