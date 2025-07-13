@@ -15,7 +15,7 @@ export default function Workshops() {
       image: "/assets/images/workShops/coursePro.webp",
       description: "הקורס המקיף שיהפוך אתכן למקצועניות, בשני מפגשים מעשיים.",
       features: [
-        "2 מפגשים (עוגת בנטו + קאפקייקס +עוגה גדולה מעוצבת)",
+        "2 מפגשים (עוגת בנטו + קאפקייקס + עוגה גדולה מעוצבת)",
         "טכניקות מקצועיות, זילופים, עבודה עם דפי סוכר וצימקאו",
         "ייעוץ עסקי להמשך הדרך - תמחור עוגות ודגשים חשובים",
         "עד 2 משתתפות",
@@ -189,9 +189,9 @@ export default function Workshops() {
                     <p className="text-gray-700 mb-4">{workshop.description}</p>
                     <ul className="space-y-2 mb-6">
                       {workshop.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-3">
+                        <li key={idx} className="flex items-start gap-3">
                           <CheckCircle
-                            className="w-5 h-5"
+                            className="w-5 h-5 mt-1 flex-shrink-0"
                             style={{
                               color: workshop.isFlagship
                                 ? "#f2b1ad"
