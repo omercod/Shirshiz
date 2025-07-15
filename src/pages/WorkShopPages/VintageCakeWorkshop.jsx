@@ -118,7 +118,7 @@ export default function VintageCakeWorkshop() {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>סדנת עוגות וינטג&apos - SHIRSHIZ</title>
+        <title>סדנת עוגות וינטג - SHIRSHIZ</title>
         <meta
           name="description"
           content="בואי ללמוד לעצב עוגת וינטג' מהממת בקרם חמאה שוויצרי בסדנה חד פעמית עם שיר. אווירה אישית, תוצאה מרשימה וטיפים לכל החיים."
